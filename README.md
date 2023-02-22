@@ -194,4 +194,19 @@ make real_books_archive
 ```
 and look at the resulting `real_books_archive` folder that is created.
 
+## How do I enable the funny jazz font & styling? 
+
+This fork of Openbook includes the [Lilyjazz fonts](https://github.com/OpenLilyPondFonts/lilyjazz) in the `include/` folder. 
+To set them up, all you need to do is copy the .otf files located in `include/fonts` to your Lilypond installation's font folder. 
+For more information, see [here](https://github.com/OpenLilyPondFonts/lilyjazz/blob/master/LilyPond-Fonts-Installation-And-Usage.txt).
+
+Then, enable the jazz font on compilation by changing this line in `scripts/wrapper_mako.py`:
+``` python
+# enable the funny jazz font
+gattr["jazzfont"] = True
+```
+
+Working on making this work better
+
+
 Mark Veltzer, Copyright © 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022
