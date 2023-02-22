@@ -483,7 +483,11 @@ ${self.clearVars()}
 		if 'heb' in attributes and attributes['heb']:
 			scratch['fullcomposer']=u'מילים ולחן: '+attributes['poet']
 		else:
-			scratch['fullcomposer']='Lyrics and Music by '+attributes['poet']
+			if gattr['jazzfont']:
+			   scratch['fullcomposer']='- '+attributes['poet']
+			else:
+				scratch['fullcomposer']='Lyrics and Music by '+attributes['poet']
+
 		scratch['fullpoet']=''
 	else:
 		if 'poet' not in attributes:
@@ -493,6 +497,7 @@ ${self.clearVars()}
 				scratch['fullpoet']=u'מלים: '+attributes['poet']
 			else:
 				scratch['fullpoet']='Lyrics by '+attributes['poet']
+		
 		if 'composer' not in attributes:
 			scratch['fullcomposer']=''
 		else:
@@ -502,7 +507,7 @@ ${self.clearVars()}
 				scratch['fullcomposer']='Music by '+attributes['composer']
 %>
 
-
+%% !!! ACTIVATE JAZZ MODE !!!
 %% JAZZY PAGE STYLING
 % if gattr['jazzfont'] == True:
 \include "jazzchords.ly"
