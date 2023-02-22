@@ -118,9 +118,12 @@ TONALITYTransposePitch=tonalityTransposePitch(TONALITY)
 	\context {
 		\Score
 		%% change the size of the text fonts
-		%%\override LyricText #'font-family = #'typewriter
-		%%\override LyricText #'font-size = #'-2
-
+		% if gattr['jazzfont']:
+		\override LyricText #'font-family = #'typewriter
+		% endif
+		% if not gattr['jazzfont']:
+		\override LyricText #'font-size = #'-2
+		% endif
 		%% set the style of the chords to Jazz - I don't see this making any effect
 		\override ChordName #'style = #'jazz
 		%%\override ChordName #'word-space = #2
