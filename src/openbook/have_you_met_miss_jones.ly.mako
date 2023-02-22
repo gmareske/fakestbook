@@ -16,7 +16,7 @@
 	# this is from the real book
 	#attributes['piece']='Med.'
 	# this is from the fake book
-	attributes['piece']='Medum Swing'
+	attributes['piece']='Medium Swing'
 	attributes['copyright']='1937, by Chappell & Co., Inc. Copyright Renewed'
 
 	attributes['typesetter']='Mark Veltzer <mark.veltzer@gmail.com>'
