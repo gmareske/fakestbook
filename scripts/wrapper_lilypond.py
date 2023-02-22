@@ -142,6 +142,9 @@ def run() -> None:
         args.append("--ps")
     if ConfigAll.do_pdf:
         args.append("--pdf")
+
+    args.append("--include=" + (os.getcwd()+"/include/"))
+#    args.append("--include="+)
     args.append("--output=" + ConfigAll.output)
     args.append(ConfigAll.ly)
     try:
