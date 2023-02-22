@@ -82,6 +82,16 @@ TONALITYTransposePitch=tonalityTransposePitch(TONALITY)
 %%	system-count = #7
 %%}
 
+% if gattr['jazzfont'] and gattr['book']:
+\include "jazzchords.ly"
+\include "lilyjazz.ly"
+
+
+
+% endif
+
+
+
 \paper {
 	%% reduce spaces between systems and the bottom (taken from the lilypond
 	%% documentation and found the relevant variable)
@@ -477,6 +487,7 @@ ${self.clearVars()}
 </%doc>
 
 <%
+	
 	# this block handles poet and composer. The idea is that the author of the tune
 	# just fills in the raw poet/composer data and this takes care of the nice printing...
 	if 'poet' in attributes and 'composer' in attributes and attributes['poet']==attributes['composer']:
@@ -484,7 +495,7 @@ ${self.clearVars()}
 			scratch['fullcomposer']=u'מילים ולחן: '+attributes['poet']
 		else:
 			if gattr['jazzfont']:
-			   scratch['fullcomposer']='- '+attributes['poet']
+			   scratch['fullcomposer']=attributes['poet']
 			else:
 				scratch['fullcomposer']='Lyrics and Music by '+attributes['poet']
 
@@ -493,11 +504,14 @@ ${self.clearVars()}
 		if 'poet' not in attributes:
 			scratch['fullpoet']=''
 		else:
-			if 'heb' in attributes and attributes['heb']:
-				scratch['fullpoet']=u'מלים: '+attributes['poet']
-			else:
-				scratch['fullpoet']='Lyrics by '+attributes['poet']
-		
+			if 'jazzfont' in gattr:
+			   scratch['fullpoet']=attributes['poet']
+			else:			
+				if 'heb' in attributes and attributes['heb']:
+				   scratch['fullpoet']=u'מלים: '+attributes['poet']
+				else:	
+				   scratch['fullpoet']='Lyrics by '+attributes['poet']
+			
 		if 'composer' not in attributes:
 			scratch['fullcomposer']=''
 		else:
@@ -505,24 +519,30 @@ ${self.clearVars()}
 				scratch['fullcomposer']=u'לחן: '+attributes['composer']
 			else:
 				scratch['fullcomposer']='Music by '+attributes['composer']
+
+	
 %>
 
 %% !!! ACTIVATE JAZZ MODE !!!
 %% JAZZY PAGE STYLING
 % if gattr['jazzfont'] == True:
-\include "jazzchords.ly"
-\include "lilyjazz.ly"
 
+% if not gattr['book']:
+\include "lilyjazz.ly"
+\include "jazzchords.ly"
+% endif
+
+% if not gattr['book']:
 \paper {
        #(define fonts
          (set-global-fonts
-	 #:music "lilyjazz"
+%%	 #:music "lilyjazz"
 	 #:roman "LilyJAZZText"
 	 #:sans "LilyJAZZText"
-%%	 #:roman "Pea Missy with a Marker"
-%%	 #:sans "Pea Missy with a Marker"
 	 #:factor (/ staff-height pt 20)))
 }
+% endif
+
 \paper {
        #(set-paper-size "letter")
        indent = 0\mm
@@ -550,14 +570,16 @@ ${self.clearVars()}
           s4
           s^\markup {
             \fill-line {
-              \fontsize #3 \lower #1 \rotate #7 "${attributes['piece']}"
+	      % if 'piece' in attributes:
+                \fontsize #3 \lower #1 \rotate #7 "${attributes['piece']}"
+	      % endif
               \fontsize #8
               \override #'(offset . 7)
               \override #'(thickness . 6)
               \underline \sans "${attributes['title']}"
               \fontsize #1 \lower #1 \line {
-	                               "${scratch['fullpoet']}"
-	                               "${scratch['fullcomposer']}"
+	      		   	       "${'- ' + scratch['fullpoet'] + scratch['fullcomposer']}"
+
 				     }
             }
           }
