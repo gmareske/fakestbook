@@ -499,6 +499,46 @@ ${self.clearVars()}
 				scratch['fullcomposer']='Music by '+attributes['composer']
 %>
 
+%% THIS IS THE VISUAL HEADER ON EACH PAGE
+%% WILL NEED TO BE MODIFIED FOR JAZZFONT BRANCH
+%% meter is attributes['piece']
+%% title is attributes['title']
+%% subtitle is attributes['subtitle']
+% if gattr['jazzfont']==True :
+\markup {
+      \score {
+        {
+          \override TextScript.extra-offset = #'(0 . -4.5)
+          s4
+          s^\markup {
+            \fill-line {
+              \fontsize #1 \lower #1 \rotate #7 "${attributes['piece']}"
+              \fontsize #8
+              \override #'(offset . 7)
+              \override #'(thickness . 6)
+              \underline \sans "${attributes['title']}"
+              \fontsize #1 \lower #1 {
+	                               "${scratch['fullpoet']}"
+	                               "${scratch['fullcomposer']}"
+				     }
+            }
+          }
+          s
+        }
+        \layout {
+          \once \override Staff.Clef.stencil = ##f
+          \once \override Staff.TimeSignature.stencil = ##f
+          \once \override Staff.KeySignature.stencil = ##f
+          ragged-right = ##f
+          %%\override TextScript.font-name = #"Pea Missy with a Marker"
+        }
+      }
+    }
+
+
+\noPageBreak
+% endif
+
 %% taken from "/usr/share/lilypond/2.12.3/ly/titling-init.ly"
 \markup {
 	\column {
@@ -648,6 +688,19 @@ Lyricsmoremore=<%include file="/${file}" args="part=Lyricsmoremore"/>
 % endif
 	>>
 	\layout {
+	%% MODIFIED FOR JAZZFONT BRANCH
+	% if gattr['jazzfont']==True:
+
+	%% make only the first clef visible
+        \override Score.Clef #'break-visibility = #'#(#f #f #f)
+
+	%% make only the first time signature visible
+	\override Score.KeySignature #'break-visibility = #'#(#f #f #f)
+
+	%% allow single-staff system bars
+	\override Score.SystemStartBar #'collapse-height = #1
+
+	% endif
 	}
 }
 % if gattr['midi']:

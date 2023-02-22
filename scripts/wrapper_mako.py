@@ -65,7 +65,10 @@ def main():
             gattr["toc"] = False
             gattr["midi"] = True
             gattr["parts"] = False
+            
         gattr["inline"] = True
+        # enable the funny jazz font
+        gattr["jazzfont"] = True
         # put some space after each tune
         gattr["space_after_tune"] = False
         # put a page break after each tune
