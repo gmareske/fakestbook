@@ -119,7 +119,7 @@ TONALITYTransposePitch=tonalityTransposePitch(TONALITY)
 		\Score
 		%% change the size of the text fonts
 		%%\override LyricText #'font-family = #'typewriter
-		\override LyricText #'font-size = #'-2
+		%%\override LyricText #'font-size = #'-2
 
 		%% set the style of the chords to Jazz - I don't see this making any effect
 		\override ChordName #'style = #'jazz
@@ -499,11 +499,41 @@ ${self.clearVars()}
 				scratch['fullcomposer']='Music by '+attributes['composer']
 %>
 
-%% THIS IS THE VISUAL HEADER ON EACH PAGE
+
+%% JAZZY PAGE STYLING
+% if gattr['jazzfont'] == True:
+\include "jazzchords.ly"
+\include "lilyjazz.ly"
+
+\paper {
+       #(define fonts
+         (set-global-fonts
+	 #:music "lilyjazz"
+	 #:roman "LilyJAZZText"
+	 #:sans "LilyJAZZText"
+%%	 #:roman "Pea Missy with a Marker"
+%%	 #:sans "Pea Missy with a Marker"
+	 #:factor (/ staff-height pt 20)))
+}
+\paper {
+       #(set-paper-size "letter")
+       indent = 0\mm
+       between-system-space = 2.5\cm
+       %%set to ##t if your score is less than one page
+       ragged-last-bottom = ##f
+       ragged-bottom = ##f
+       markup-system-spacing = #'((basic-distance . 15)
+       			       	  (minimum-distance . 8)
+				  (padding . 1))
+}
+% endif
+
+%% THIS IS THE VISUAL TITLE ON EACH PAGE
 %% WILL NEED TO BE MODIFIED FOR JAZZFONT BRANCH
 %% meter is attributes['piece']
 %% title is attributes['title']
 %% subtitle is attributes['subtitle']
+%% JAZZY HEADER
 % if gattr['jazzfont']==True :
 \markup {
       \score {
@@ -512,12 +542,12 @@ ${self.clearVars()}
           s4
           s^\markup {
             \fill-line {
-              \fontsize #1 \lower #1 \rotate #7 "${attributes['piece']}"
+              \fontsize #3 \lower #1 \rotate #7 "${attributes['piece']}"
               \fontsize #8
               \override #'(offset . 7)
               \override #'(thickness . 6)
               \underline \sans "${attributes['title']}"
-              \fontsize #1 \lower #1 {
+              \fontsize #1 \lower #1 \line {
 	                               "${scratch['fullpoet']}"
 	                               "${scratch['fullcomposer']}"
 				     }
@@ -531,14 +561,17 @@ ${self.clearVars()}
           \once \override Staff.KeySignature.stencil = ##f
           ragged-right = ##f
           %%\override TextScript.font-name = #"Pea Missy with a Marker"
+	  \override TextScript.font-name = #"LilyJAZZText"
         }
       }
     }
 
 
 \noPageBreak
-% endif
 
+% else:
+
+%% Default Header
 %% taken from "/usr/share/lilypond/2.12.3/ly/titling-init.ly"
 \markup {
 	\column {
@@ -573,6 +606,8 @@ ${self.clearVars()}
 	}
 }
 \noPageBreak
+
+%endif
 
 % if attributes.get_working_version()['doOwn']==False:
 

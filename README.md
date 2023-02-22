@@ -206,7 +206,10 @@ Then, enable the jazz font on compilation by changing this line in `scripts/wrap
 gattr["jazzfont"] = True
 ```
 
+You can test if the install worked by trying to compile the test file by running `lilypond test.ly` while in the `include/` directory.
+
 Working on making this work better
+
 
 
 Mark Veltzer, Copyright © 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022
