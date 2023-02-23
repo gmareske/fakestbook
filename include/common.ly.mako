@@ -523,8 +523,21 @@ ${self.clearVars()}
 	
 %>
 
+<%
+# eventually I want to merge the logic in this code block with the prior
+# but I don't want to deal with that massive if/else statement right now
+if gattr['jazzfont']:
+   if 'poet' in attributes and 'composer' in attributes and attributes['poet']==attributes['composer']:
+      scratch['jazzby']='- ' + attributes['poet']
+   elif 'poet' not in attributes:
+   	scratch['jazzby']='- '+attributes.get('composer','')
+   elif 'composer' not in attributes:
+   	scratch['jazzby']='- '+attributes.get('poet','')
+   else:
+	scratch['jazzby']='- '+attributes['poet']+' / '+attributes['composer']
+%>
 %% !!! ACTIVATE JAZZ MODE !!!
-%% JAZZY PAGE STYLING
+
 % if gattr['jazzfont'] == True:
 
 % if not gattr['book']:
@@ -578,7 +591,7 @@ ${self.clearVars()}
               \override #'(thickness . 6)
               \underline \sans "${attributes['title']}"
               \fontsize #1 \lower #1 \line {
-	      		   	       "${'- ' + scratch['fullpoet'] + scratch['fullcomposer']}"
+	      		   	       "${scratch['jazzby']}"
 
 				     }
             }

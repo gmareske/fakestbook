@@ -65,6 +65,7 @@ def main():
             gattr["toc"] = False
             gattr["midi"] = True
             gattr["parts"] = False
+
             
         gattr["inline"] = True
         # enable the funny jazz font
