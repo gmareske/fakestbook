@@ -692,6 +692,10 @@ Lyricsmoremore=<%include file="/${file}" args="part=Lyricsmoremore"/>
 %% score for printing
 \score {
 	<<
+% if gattr['jazzfont']:
+  \set Score.tempoHideNote = ##t  
+% endif
+
 % if attributes.get_working_version()['doChords']:
 \new ChordNames="Chords"
 % if attributes.get_working_version()['doChordBars']:
