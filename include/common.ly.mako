@@ -292,10 +292,10 @@ ${self.defs()}
 				\null
 				\null
 				\null
-				\fill-line { \fontsize #11 \bold "OpenBook (${TONALITYName})"}
+				\fill-line { \fontsize #11 \bold "The ${TONALITYName} OpenBook"}
 				\null
 				\null
-				\fill-line { \larger \larger \bold "An open source Jazz real book" }
+				\fill-line { \larger \larger \bold "An open source Jazz real book in the key of ${TONALITYName}" }
 				\null
 				\null
 				\null
@@ -569,11 +569,6 @@ if gattr['jazzfont']:
 }
 % endif
 
-%% THIS IS THE VISUAL TITLE ON EACH PAGE
-%% WILL NEED TO BE MODIFIED FOR JAZZFONT BRANCH
-%% meter is attributes['piece']
-%% title is attributes['title']
-%% subtitle is attributes['subtitle']
 %% JAZZY HEADER
 % if gattr['jazzfont']==True :
 \markup {
@@ -608,7 +603,6 @@ if gattr['jazzfont']:
         }
       }
     }
-
 
 \noPageBreak
 
