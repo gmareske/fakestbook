@@ -4,8 +4,8 @@ BOOK_TOPLEVEL:=book
 SINGLE_TOPLEVEL:=single
 
 # compiles a single song into a subdirectory of the output directory
-$(SONG_DIR)/%.ly:
-	lilypond -lERROR -o $(OUTPUT_DIR)/$(SONG_DIR) $@ 
+$(OUTPUT_DIR)/$(SONG_DIR)/%.pdf:
+	lilypond -lERROR -o $(basename $@) --evaluate='(define-public ob:single-file "$(SONG_DIR)/$(basename $(notdir $@)).ly")' $(SINGLE_TOPLEVEL).ly
 
 # compile the whole book from the topleve
 .PHONY: book
@@ -15,4 +15,5 @@ book:
 # clean up
 .PHONY: clean
 clean:
-	rm $(OUTPUT_DIR)/*
+	rm  -rf $(OUTPUT_DIR)/*
+	mkdir $(OUTPUT_DIR)/songs

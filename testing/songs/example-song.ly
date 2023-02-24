@@ -1,6 +1,6 @@
 \version "2.23.12"
 
-%\include "ob-macros.ly"
+
 % this sets the default key to C if not already defined
 #(define transpose-key (if (defined? 'transpose-key) transpose-key (ly:make-pitch 0 0 0)))
 % uncomment the below line to lower the transposition by one octave
