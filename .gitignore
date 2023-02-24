@@ -106,3 +106,6 @@ coverage.xml
 
 # generic
 *.log
+
+# emacs autosaves
+*~
