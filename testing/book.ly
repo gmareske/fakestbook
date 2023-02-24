@@ -20,6 +20,7 @@
 #(display (first ly-source-files))
 
 % figure out what key we're in
+% The Version of Openbook we're publishing
 #(define transpose-version 'ees)
 #(define key-transposition-alist '((des . b)
 				   (d  . bes)
@@ -31,10 +32,28 @@
 				   (aes . e)
 				   (b  . ees)
 				   (bes . d)))
+% string names for each key symbol. very useful
 #(define tonality-names '((c . "C") (cis . "C♯") ( d . "D") (ees . "E♭")(e . "E")(f . "F")(ges . "G♭")(g . "G")(aes . "A♭")(a . "A")(bes . "B♭")(b . "B")))
 
-#(define key (assq-ref transpose-version key-transposition-alist))
+#(define (key->pitch sym)
+  (apply ly:make-pitch 
+   (cdr (assv sym '((c . (0 0 0))
+		   (des . (0 1 -1/2))
+		   (d . (0 1 0))
+		   (ees . (0 2 -1/2))
+		   (e   . (0 2 0))
+		   (f   . (0 3 0))
+		   (ges . (0 4 -1/2))
+		   (g   . (0 4 0))
+		   (aes . (0 5 -1/2))
+		   (a   . (0 5 0))
+		   (bes . (0 6 -1/2))
+		   (b   . (0 6 0)))))))
 
+%% this assigns a pitch object that can be dropped into \transpose statements later
+
+#(define transpose-key (key->pitch (cdr (assv transpose-version key-transposition-alist))))
+		    
 #(set-global-staff-size 17.82)
 
 				% There is no need to set the paper size to a4 since it is the default.
@@ -45,6 +64,11 @@
 				% Don't have textedit:// links for every note in the pdf file.
 				% This reduces the size of the pdf by a lot
 \pointAndClickOff
+
+%% MY INCLUDES
+%\include "ob-macros.ly"
+\include "lilyjazz.ly"
+\include "jazzchords.ly"
 
 				% chord related matters
 myChordDefinitions={
@@ -150,19 +174,15 @@ endChords={}
 				% lets always include guitar definitions
 \include "predefined-guitar-fretboards.ly"
 
-				% !!! ACTIVATE JAZZ MODE !!!
-
-				% \include "lilyjazz.ly"
-				% \include "jazzchords.ly"
-
-				% \paper {
-				%        #(define fonts
-				%          (set-global-fonts
-				% %	 #:music "lilyjazz"
-				% 	 #:roman "LilyJAZZText"
-				% 	 #:sans "LilyJAZZText"
-				% 	 #:factor (/ staff-height pt 20)))
-				% }
+\layout {
+  indent = 0.0\cm
+  \context {
+    \Score
+    \override LyricText #'font-family = #'typewriter
+    \override ChordName #'style = #'jazz
+    \remove "Bar_number_engraver"
+  }
+}
 
 \paper {
   #(set-paper-size "letter")
@@ -177,8 +197,6 @@ endChords={}
 }
 
 \book{
-
- 
   \include "title-page.ly"
 
   \markuplist \table-of-contents
@@ -186,6 +204,6 @@ endChords={}
 
 
 				% the magic happens here
-  #@(map (lambda (filename) (ly:parser-include-string (ly:gulp-file filename))) ly-source-files)
+  #@(map (lambda (filename) (begin (ly:parser-include-string (ly:gulp-file filename)) (ly:parser-include-string "\\pageBreak"))) ly-source-files)
 
 }
