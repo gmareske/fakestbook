@@ -1,6 +1,7 @@
 \version "2.23.12"
 
 #(begin
+  
   (newline) ; for clean output
   (use-modules (ice-9 ftw))
 
@@ -15,9 +16,12 @@
   (define ly-source-files
    (map (lambda (fn) (string-concatenate (list songs-source-directory "/" fn)))
     (scandir (string-append  "/home/griff/Documents/openbook/testing/" songs-source-directory) include-this-file?)))
+  (display "Building openbook out of source files: ")
+  (display ly-source-files)
+  (newline)
 )
 
-#(display (first ly-source-files))
+
 
 % figure out what key we're in
 % The Version of Openbook we're publishing

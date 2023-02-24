@@ -3,11 +3,6 @@
 
 #(define transpose-version (if (defined? 'transpose-version) transpose-version 'c))
 #(define transpose-name (if (defined? 'tonality-names) (cdr (assv transpose-version tonality-names)) "C"))
-#(newline)
-#(display "Transpose name: ")
-#(display transpose-name)
-#(newline)
-#(display tonality-names)
 \bookpart {
   \markup {
     \column {
