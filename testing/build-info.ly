@@ -41,7 +41,7 @@
   (hashq-set! fb:build-info 'lily-version
    (get-first-line-of "lilypond --version"))
 
-  (display "Build info: ")
+  (display "Build info: (from build-info.ly)")
   (newline)
   (hash-for-each (lambda (k v) (display k) (display ": ") (display v) (newline)) fb:build-info)
 

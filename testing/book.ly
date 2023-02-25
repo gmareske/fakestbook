@@ -24,6 +24,11 @@
 % Tranposition
 \include "transpose.ly"
 \include "build-info.ly"		    
+
+%% Set the number of songs in the build info
+#(hashq-set! fb:build-info 'song-count (number->string (length ly-source-files)))
+
+
 #(set-global-staff-size 17.82)
 
 				% There is no need to set the paper size to a4 since it is the default.
