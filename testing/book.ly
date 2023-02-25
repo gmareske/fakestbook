@@ -28,7 +28,7 @@
 
 %% Set the number of songs in the build info
 #(hashq-set! fb:build-info 'song-count (number->string (length ly-source-files)))
-
+#(print-build-info)
 
 #(set-global-staff-size 17.82)
 \pointAndClickOff
