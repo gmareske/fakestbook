@@ -142,10 +142,13 @@
       \smaller \smaller { "COPYRIGHT" }
     }
     \fill-line {
-      \smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>, Built at 10:30:58 23-02-2023, Engraved by lilypond 2.23.12" }
+      \smaller \smaller { "Typeset by YOURNAMEHERE" }
     }
     \fill-line {
-      \smaller \smaller { \with-url #"https://veltzer.github.io/openbook" https://veltzer.github.io/openbook }
+      \smaller \smaller \concat { "Built at: " #(get-build-info 'build-date)  }
+    }
+    \fill-line {
+      \smaller \smaller { \with-url #(get-build-info 'website) #(get-build-info 'website) }
     }
   }
 }

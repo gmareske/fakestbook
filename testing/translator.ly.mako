@@ -277,10 +277,10 @@ Lyricsmoremore=<%include file="/${file}" args="part=Lyricsmoremore"/>
 		\smaller \smaller { "${scratch['typesetby']}" }
 	}
 	\fill-line {
-		\smaller \smaller { "${scratch['tagline']}" }
+		\smaller \smaller \concat { "Built at: " #(get-build-info 'build-date)  }
 	}
 	\fill-line {
-		\smaller \smaller { \with-url #"https://veltzer.github.io/openbook" https://veltzer.github.io/openbook }
+		\smaller \smaller { \with-url #(get-build-info 'website) #(get-build-info 'website) }
 	}
 }
 % if gattr['space_after_tune']:
