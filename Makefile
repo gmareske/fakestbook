@@ -32,7 +32,8 @@ DO_CHECKHTML:=0
 # do you want to lynt scripts?
 DO_LINT:=1
 # which books should we do?
-NAMES:=openbook israeli drumming rockbook guitar_album
+# changed for dev on jazzfont branch
+NAMES:=openbook #israeli drumming rockbook guitar_album
 
 #############
 # CONSTANTS #
@@ -53,6 +54,7 @@ LILYPOND_WRAPPER_DEP:=scripts/wrapper_lilypond.py
 MAKO_WRAPPER:=python -m scripts.wrapper_mako
 MAKO_WRAPPER_DEP:=scripts/wrapper_mako.py
 MAKO_DEPS_WRAPPER:=scripts/mako_deps.py
+# everything under here is deprecated
 MIDI2WAV_WRAPPER:=scripts/midi2wav.pl
 MIDI2WAV_WRAPPER_DEP:=scripts/midi2wav.pl
 MIDI2OGG_WRAPPER:=scripts/midi2ogg.pl

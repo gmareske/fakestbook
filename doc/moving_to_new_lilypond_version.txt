@@ -1,1 +1,0 @@
-find . -name "*.mako" -exec convert-ly -n -e --from [old_version] --to [new_version] {} \;
