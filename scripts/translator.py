@@ -53,7 +53,7 @@ def main():
         gattr["book"] = False
         gattr["toc"] = False
         gattr["midi"] = False
-        gattr["parts"] = False
+        gattr["parts"] = True
         
         gattr['date']=datetime.datetime.now().strftime('%T %d-%m-%Y')
         gattr["inline"] = True

@@ -75,7 +75,7 @@
     \new Staff="Melody" {
       \new Voice="Voice"
       
-      \transpose c \transpose-key {
+      \transpose c' \transpose-key {
 	\relative c' {
 				%\tempo "Allegro" 4 = 168
 	  % MELODY GOES HERE

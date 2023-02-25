@@ -16,6 +16,7 @@
 #(define transpose-key (if (defined? 'transpose-key) transpose-key (ly:make-pitch 0 0 0)))
 %#(define transpose-key (ly:pitch-transpose transpose-key (ly:make-pitch -1 0 0)))
 
+\bookpart {
 
 % this causes the variables to be defined...
 
@@ -110,9 +111,7 @@
 	<<
 
 \new ChordNames="Chords"
-	\with {
-		\remove "Bar_engraver"
-	}
+
 % # transpose with 'inline' is true!
 	\transpose c \transpose-key {
 
@@ -268,7 +267,7 @@
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }
 	}
 	\fill-line {
-		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>, Built at 14:36:13 25-02-2023, Engraved by lilypond 2.23.12" }
+		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>, Built at 15:13:24 25-02-2023, Engraved by lilypond 2.23.12" }
 	}
 	\fill-line {
 		\smaller \smaller { \with-url #"https://veltzer.github.io/openbook" https://veltzer.github.io/openbook }
@@ -276,4 +275,5 @@
 }
 
 
+}
 

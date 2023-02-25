@@ -25,29 +25,6 @@
 %   scoreTitleMarkup = \markup {}
 %   bookTitleMarkup = \markup {}
 % }
-\layout {
-  %% don't have the first line indented
-  indent = 0.0 \cm
-  %% don't know what this is (taken from Laurent Martelli...)
-  %%textheight = 1.5\cm
-
-  \context {
-    \Score
-    %% change the size of the text fonts
-    \override LyricText #'font-family = #'typewriter
-    %% set the style of the chords to Jazz - I don't see this making any effect
-    \override ChordName #'style = #'jazz
-    %%\override ChordName #'word-space = #2
-
-    %% set the chord size and font
-    %%\override ChordName #'font-series = #'bold
-    %%\override ChordName #'font-family = #'roman
-    %%\override ChordName #'font-size = #-1
-
-    %% don't show bar numbers (for jazz it makes it too cluttery)
-    \remove "Bar_number_engraver"
-  }
-}
 				% reduce the font size (taken from the lilypond info documentation, default is 20)
 
 

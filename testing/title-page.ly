@@ -58,15 +58,15 @@
       \null
       \null
       \null
-      \fill-line { \small "Git tag: 177" }
-      \fill-line { \small "Git describe: 177-12-gc4d6e35a" }
-      \fill-line { \small "Git commits: 1845" }
-      \fill-line { \small "Build date: 10:31:31 23-02-2023" }
-      \fill-line { \small "Build user: griff" }
-      \fill-line { \small "Build host: bigbrain" }
-      \fill-line { \small "Build kernel: Linux 6.0.12-100.fc35.x86_64" }
-      \fill-line { \small "Lilypond version: 2.23.12" }
-      \fill-line { \small "Number of tunes: 151" }
+      \fill-line { \small \concat { "Git tag: " #(get-build-info 'git-tag) } }
+      \fill-line { \small \concat { "Git describe: " #(get-build-info 'git-desc) } }
+      \fill-line { \small \concat { "Git commits: " #(get-build-info 'git-commits) } }
+      \fill-line { \small \concat { "Build date: " #(get-build-info 'build-date) } }
+      \fill-line { \small \concat { "Build user: " #(get-build-info 'username) } }
+      \fill-line { \small \concat { "Build host: " #(get-build-info 'hostname) } }
+      \fill-line { \small \concat { "Build kernel: " #(get-build-info 'kernel)  } }
+      \fill-line { \small \concat { "Lilypond version: " #(get-build-info 'lily-version) } }
+      \fill-line { \small \concat { "Number of tunes: " #(get-build-info 'song-count) } }
       \null
       \null
       \null

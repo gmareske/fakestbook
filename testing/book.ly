@@ -23,7 +23,7 @@
 
 % Tranposition
 \include "transpose.ly"
-		    
+\include "build-info.ly"		    
 #(set-global-staff-size 17.82)
 
 				% There is no need to set the paper size to a4 since it is the default.
@@ -142,31 +142,32 @@ startChords={
 }
 endChords={}
 				% lets always include guitar definitions
-\include "predefined-guitar-fretboards.ly"
-
-\layout {
-  indent = 0.0\cm
-  \context {
-    \Score
-    \override LyricText #'font-family = #'typewriter
-    \override ChordName #'style = #'jazz
-    \remove "Bar_number_engraver"
+%\include "predefined-guitar-fretboards.ly"
+  \layout {
+    indent = 0.0\cm
+    \context {
+      \Score
+      \override LyricText #'font-family = #'typewriter
+      \override ChordName #'style = #'jazz
+      \remove "Bar_number_engraver"
+    }
   }
-}
 
-\paper {
-  #(set-paper-size "letter")
-  indent = 0\mm
-  between-system-space = 2.5\cm
-  %%set to ##t if your score is less than one page
-  ragged-last-bottom = ##f
-  ragged-bottom = ##f
-  markup-system-spacing = #'((basic-distance . 15)
-			     (minimum-distance . 8)
-			     (padding . 1))
-}
+  \paper {
+    #(set-paper-size "letter")
+    indent = 0\mm
+    between-system-space = 2.5\cm
+    %%set to ##t if your score is less than one page
+    ragged-last-bottom = ##f
+    ragged-bottom = ##f
+    markup-system-spacing = #'((basic-distance . 15)
+			       (minimum-distance . 8)
+			       (padding . 1))
+  }
 
 \book{
+
+
   \include "title-page.ly"
 
   \markuplist \table-of-contents
