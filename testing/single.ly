@@ -5,44 +5,15 @@
 % ob:single-file is passed in from make / the execution of the lilypond command at the command line
 #(begin
   (newline)
-  (when (not (defined? 'ob:single-file)) (display "No file provided, check the lilypond command again!"))
+  (when (not (defined? 'fb:single-file)) (display "No file provided, check the lilypond command again!"))
   (display "Building song: ")
-  (display ob:single-file)
+  (display fb:single-file)
   (newline)
 )
 
-#(define transpose-version 'ees)
-#(define key-transposition-alist '((des . b)
-				   (d  . bes)
-				   (ees . a)
-				   (e  . aes)
-				   (f  . g)
-				   (ges . ges)
-				   (g  . f)
-				   (aes . e)
-				   (b  . ees)
-				   (bes . d)))
-% string names for each key symbol. very useful
-#(define tonality-names '((c . "C") (cis . "C♯") ( d . "D") (ees . "E♭")(e . "E")(f . "F")(ges . "G♭")(g . "G")(aes . "A♭")(a . "A")(bes . "B♭")(b . "B")))
+% Figure out what key we're in
+\include "transpose.ly"
 
-#(define (key->pitch sym)
-  (apply ly:make-pitch 
-   (cdr (assv sym '((c . (0 0 0))
-		   (des . (0 1 -1/2))
-		   (d . (0 1 0))
-		   (ees . (0 2 -1/2))
-		   (e   . (0 2 0))
-		   (f   . (0 3 0))
-		   (ges . (0 4 -1/2))
-		   (g   . (0 4 0))
-		   (aes . (0 5 -1/2))
-		   (a   . (0 5 0))
-		   (bes . (0 6 -1/2))
-		   (b   . (0 6 0)))))))
-
-%% this assigns a pitch object that can be dropped into \transpose statements later
-
-#(define transpose-key (key->pitch (cdr (assv transpose-version key-transposition-alist))))
 #(set-global-staff-size 17.82)
 
 				% There is no need to set the paper size to a4 since it is the default.
@@ -185,4 +156,4 @@ endChords={}
 			     (minimum-distance . 8)
 			     (padding . 1))
 }
-\include #(string-copy ob:single-file)
+\include #(string-copy fb:single-file)
