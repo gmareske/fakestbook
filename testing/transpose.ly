@@ -1,7 +1,7 @@
 
 % figure out what key we're in
 % CHANGE THIS VALUE TO GET A DIFFERENT TRANSPOSITION OF THE BOOK
-#(define transpose-version 'ees)
+#(define transpose-version 'c)
 
 %% reverse transposition
 %% TODO: do this in a non-hardcoded way?

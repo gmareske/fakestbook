@@ -43,7 +43,8 @@
 %% MY INCLUDES
 %\include "ob-macros.ly"
 \include "lilyjazz.ly"
-\include "jazzchords.ly"
+%% jazzchords.ly causes chord accidentals to not show
+%%\include "jazzchords.ly"
 
 				% chord related matters
 myChordDefinitions={
@@ -153,7 +154,8 @@ endChords={}
     \context {
       \Score
       \override LyricText #'font-family = #'typewriter
-      \override ChordName #'style = #'jazz
+      \override ChordName.style = #'jazz
+      \override ChordName.font-name = #"LilyJAZZtext"
       \remove "Bar_number_engraver"
     }
   }
