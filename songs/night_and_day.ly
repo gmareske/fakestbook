@@ -10,6 +10,7 @@
 
 
 
+
 % this sets the default key to middle C if not already defined
 #(define transpose-key (if (defined? 'transpose-key) transpose-key (ly:make-pitch 0 0 0)))
 %#(define transpose-key (ly:pitch-transpose transpose-key (ly:make-pitch -1 0 0)))
@@ -30,28 +31,25 @@
 
 
 
+
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Night And Day
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% composer: Cole Porter
+% poet: Cole Porter
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: f3f8f010-3fda-11e2-ad72-a3725b0aaeaa
+% structure: AAB
+% location: kw:42,rbk1:320
+% idyoutuberemark1: Cannonical version by Frank Sinatra
+% idyoutube1: mGGirB4XOmI
+% idyoutuberemark2: Cole Porter version
+% idyoutube2: 5WX_fKVWX2s
+% lyricsurl: http://www.lyricsfreak.com/f/frank+sinatra/night+day_20055251.html
+% wiki: Night_and_Day_(song)
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +74,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 ""
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Night And Day"
+	      \fontsize #1 \lower #1  "- Cole Porter"
 	    }
 	  }
 	  s
@@ -98,7 +96,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Night And Day / Cole Porter"
 
 
 % include the preparatory stuff, if there is any
@@ -123,25 +121,37 @@
 	\startChords
 	\startSong
 
+	\partial 2 s2 |
+
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
+	\repeat volta 2 {
+		d1:m7.5- | g:7 | c1*2:maj7 | \myEndLine
+		d1:m7.5- | g:7 | c1*2:maj7 | \myEndLine
+		fis1:m7.5- | f:m7 | e:m7 | ees:dim7 | \myEndLine
+		d:m7 | g:7 | c:maj7 |
+	} \alternative {
+		{
+			c:maj7 | \myEndLineVoltaNotLast
+		}
+		{
+			bes:7 | \myEndLineVoltaLast
+		}
+	}
 	\endPart
 
 	\myMark "B"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	ees1*2:maj7 | c:maj7 | \myEndLine
+	ees:maj7 | c:maj7 | \myEndLine
+	fis1:m7.5- | f:m7 | e:m7 | ees:dim7 | \myEndLine
+	d:m7 | g2:7 d:m7 | c1:6 | \LPC d2:7 \RPC g:7 | \myEndLine
 	\endPart
 
 	\endSong
 	\endChords
 }
+
 
 
 }
@@ -155,22 +165,34 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Allegro" 4 = 130
 	\time 4/4
 	\key c \major
 
+	\partial 2 g'4 g8 g~ |
+
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	\repeat volta 2 {
+		g1~ | g2 \tuplet 3/2 { f4 e dis } | e1~ | e2 g4 g8 g~ |
+		g4 g g g | g f \tuplet 3/2 { f e dis } | e1~ | e2 e4. e8 |
+		e4 e e e | ees2~ ees8 ees4 ees8 | d4 d d d | d des8 c~ c4 b |
+		a4 aes8 g~ g2 | g g'4 g8 g~ | g1~ |
+	} \alternative {
+		{
+			g2 g4 g8 g |
+		}
+		{
+			g2 g4 g |
+		}
+	}
 
 %% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	bes1~ | bes2 \tuplet 3/2 { g4 f ees } | g g8 g~ g2~ | g g4. g8 |
+	bes c4 bes8 c4 bes8 c~ | c bes4 g8~ \tuplet 3/2 { g4 f ees } | g g8 g~ g2~ | g2 e!4. e8 |
+	e4 e e e | ees2~ ees8 ees4 ees8 | d4 d d d | d8 des c b'~ b bes a4 |
+	g4 g8 g~ g2~ | g c4 c8 c~ | c1 | r |
 }
+
 
  }
 }
@@ -180,29 +202,53 @@
 
 
 
+% this version of the lyrics is from the fake book but adjusted for the real book (the real book has no lyrics)...
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
+	Night And Day __
+	You are the one __
+	On -- ly you __ be -- nea -- th the moon
+	And under the sun __
+	Whe -- ther near to me or far __ _
+	No mat -- ter, dar -- ling Where you are __ _
+	I think of __ you
+	Night And Day __
 
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+	Day and night __
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
+	_ Night And Day
+	Un -- der the hide of me __
+	There's an oh such a hun -- gry
+	Year -- __ nin' bur -- __ nin' in -- side of me __
+	And its tor -- ment won't be through __
+	'Til you let me spend my life
+	Mak -- ing love __ to you
+	Day and night __
+	Night And Day __
+}
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+
+}
+\new Lyrics="Lyrics" \lyricsto "Voice" {
+	
+
+
+
+
+
+\lyricmode {
+
+%% part "A"
+	_ _ _
+	Why it is so __
+	That this long -- __ ing for you
+	Fol -- lows wher -- ever I go. __
+	In the roa -- rin' tra -- ffic's boom __
+	In the si -- lence of my lone -- ly room __ _
+	I think of __ you
+	Night And Day __
 }
 
 }
@@ -223,7 +269,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "-- help me fill it out this copyright notice --" }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

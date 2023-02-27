@@ -33,25 +33,16 @@
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: I Left My Heart In San Francisco
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
-% typesetter: Mark Veltzer <mark.veltzer@gmail.com>
+% composer: Geroge Cory
+% poet: Douglass Cross
+% piece: Slowly
+% copyright: 1954 General Music Publishing Co., Inc.
+% typesetter: Jordan Eldredge <JordanEldredge@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: 5a23cc08-da7f-11e3-8c45-c30fe9a88e5b
+% structure: ABA'C
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +67,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Slowly"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "I Left My Heart In San Francisco"
+	      \fontsize #1 \lower #1  "- Douglass Cross / Geroge Cory"
 	    }
 	  }
 	  s
@@ -98,7 +89,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "I Left My Heart In San Francisco / Geroge Cory, Douglass Cross"
 
 
 % include the preparatory stuff, if there is any
@@ -120,27 +111,37 @@
 
 
 \chordmode {
-	\startChords
 	\startSong
+	\startChords
+
+	\partial 2. s2. |
 
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
+	bes1 | d2:m7 cis:dim7 | c1:m7 | c:m7 |
+	c:m7 | c2:m7/f f:7.5+ | bes1 |
 	\endPart
 
 	\myMark "B"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	bes2 c4:m7 cis:dim7 | bes1 | d2:m7 cis:dim7 | d1:m7 | d2:m7 d:7.9- |
+	g1:m7 | c2:9 c:7.9- | f:9 b:dim7 | c:m7 f:7 |
 	\endPart
 
-	\endSong
+	\myMark "A'"
+	\startPart
+	bes1 | d2:m7 cis:dim7 | c1:m7 |
+	c:m7 | f:9 | f2:9 ees:9 | d1:7 |
+	\endPart
+
+	\myMark "C"
+	\startPart
+	d:7 | g2.:7.5+ g4:9 | g1:9 |
+	c2. g4:m7 | c1:9 | c:m7 | c2:m7/f f:7.9- | bes2:6 aes4:6.9 a:6.9 | bes1:6.9 |
+	\endPart
+
 	\endChords
+	\endSong
 }
 
 
@@ -155,21 +156,15 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Andante Moderato" 4 = 88
 	\time 4/4
-	\key c \major
+	\key bes \major
 
-%% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
-
-%% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	d4 ees g | f1 | r4 g a4. bes8 | g c,4.~ c4 r | r c b c | g'1 | r4 bes a4. f8 |
+	d2 r | r4 d ees e | f8 ees4 d16 ees f2~ | f4 r r g | a8 g4 f16 g a2~ | a4 a gis4. a8 |
+	bes1~ | bes4 c a4. c,8 | f2 r4 g8 f | ees4 r8 d ees4 g | f1 | r4 g a bes | g8 c,4.~ c4 r |
+	r c b c | a'1~ | a4 a bes c | d1 | r4 d cis4. d8 | ees2. d4 | b2 c4 d |
+	c g2. | r4 g fis g | ees'2. g,4 | d'2 d | bes1~ | bes4 r r2 |
 }
 
  }
@@ -181,28 +176,10 @@
 
 
 \lyricmode {
-
-%% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
-
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
-
-%% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
-
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+	I Left My Heart In San Fran -- cis -- co, __ high on a hill, it calls to
+	me. To be where lit -- tle ca -- ble cars __ climb half -- way to the stars! __ to morn -- ing
+	fog __ may chill the air I don't care! My love waits there in San Fran -- cis -- co, __
+	a -- bove the blue __ and wind -- y sea. When I come home to you San Fran -- cis-- co your gold -- en sun will sine for me. __
 }
 
 }
@@ -223,10 +200,10 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1954 General Music Publishing Co., Inc." }
 	}
 	\fill-line {
-		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }
+		\smaller \smaller { "Typeset by Jordan Eldredge <JordanEldredge@gmail.com>" }
 	}
 	\fill-line {
 		\smaller \smaller \concat { "Built at: " #(get-build-info 'build-date)  }

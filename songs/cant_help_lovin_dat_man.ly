@@ -33,25 +33,16 @@
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Can't Help Lovin' Dat Man
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
-% typesetter: Mark Veltzer <mark.veltzer@gmail.com>
+% composer: Jerome Kern
+% poet: Oscar Hammerstein III
+% piece: Moderately and rather freely
+% copyright: 1927 T.B. Hama Company, Copyright Renewed
+% typesetter: Jordan Eldredge <JordanEldredge@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: 0343bfb8-da81-11e3-a02b-6be199cd3208
+% structure: AABA
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +67,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Moderately and rather freely"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Can't Help Lovin' Dat Man"
+	      \fontsize #1 \lower #1  "- Oscar Hammerstein III / Jerome Kern"
 	    }
 	  }
 	  s
@@ -98,7 +89,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Can't Help Lovin' Dat Man / Jerome Kern, Oscar Hammerstein III"
 
 
 % include the preparatory stuff, if there is any
@@ -120,27 +111,35 @@
 
 
 \chordmode {
-	\startChords
 	\startSong
+	\startChords
 
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
+	c2:maj7 a:m7 | d:m7 g:7 | c:maj7 g4:m7 c:7.9- | f2:6 bes:9 | \myEndLine
+	e:m7 a:m7 | aes2:7 d4:7.9- g:7.9- | c2:maj7 ees:dim7 | d:m7 g:7.5+ | \myEndLine
+	\endPart
+
+	\myMark "A"
+	\startPart
+	c:maj7 a:m7 | d:m7 g:7 | c:maj7 g4:m7 c:7.9- | f2:6 bes:9 | \myEndLine
+	e:m7 a:m7 | aes:7 d4:7.9- g:7.9- | c2:maj7 d:m7 | g:m7 c:7.9- | \myEndLine
 	\endPart
 
 	\myMark "B"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	f1:6 | fis:dim7 | c:maj7 | d:7 | \myEndLine
+	e2:m7 ees:maj7 | d:m7 d:9 | d1:m7/g | g:7 | \myEndLine
 	\endPart
 
-	\endSong
+	\myMark "A"
+	\startPart
+	c2:maj7 a:m7 | d:m7 g:7 | c:maj7 g4:m7 c:7.9- | f2:6 bes:9 | \myEndLine
+	e:m7 a:m7 | aes:7 d4:7.9- g:7.9- | c2:maj7 ees:9 aes:maj7 des:maj7 | c1:maj7 | \myEndLine
+	\endPart
+
 	\endChords
+	\endSong
 }
 
 
@@ -155,21 +154,24 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Andante Moderato" 4 = 88
 	\time 4/4
 	\key c \major
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	g'8 g g c~ c4 c | c8 g g g~ g2 | e8 e e a~ a4 a | a8 d, d d~ d2 | g c, |
+	aes8 c c ees~ ees4 d | c1 | R1 |
+
+%% part "A"
+	g'8 g g c~ c4 c | c8 g g g~ g2 | e8 e e a~ a4 a | a8 d, d d~ d2 | g c, |
+	aes8 c c ees~ ees4 d | c1 | R1 |
 
 %% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	d4 d d d8 ees~ | ees1 | e?4 e e e8 fis~ | fis1 | g4 g g g | a a a a | d2~ d8 c b a | g1 |
+
+%% part "A"
+	g8 g g c~ c4 c | c8 g g g~ g2 | e8 e e a~ a4 a | a8 d, d d~ d2 | g c |
+	ees8 c d ees~ ees4 d | c1~ | c2. r4 | R1 |
 }
 
  }
@@ -181,28 +183,12 @@
 
 
 \lyricmode {
+	Fish got to swim __ and birds got to fly __ I got to love __ one man 'til I die, __ Can't Help
+	Lov -- in' Dat Man of mine. Tell me he's la -- zy tell me he's slow, __
+	tell me I'm cra -- zy may -- be I know, __ Can't Help Lov -- in' Dat Man of mine.
 
-%% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
-
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
-
-%% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
-
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+	When he goes a -- way __ dat's a rain -- y day, __ and when he comes back dat day is fine, __ the sun will shine.
+	He can come home as late as can be, __ home with -- out him __ ain't no home to me, __ Can't Help Lov -- in' Dat Man of mine. __
 }
 
 }
@@ -223,10 +209,10 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1927 T.B. Hama Company, Copyright Renewed" }
 	}
 	\fill-line {
-		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }
+		\smaller \smaller { "Typeset by Jordan Eldredge <JordanEldredge@gmail.com>" }
 	}
 	\fill-line {
 		\smaller \smaller \concat { "Built at: " #(get-build-info 'build-date)  }

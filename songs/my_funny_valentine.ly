@@ -33,25 +33,22 @@
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: My Funny Valentine
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% composer: Richard Rodgers
+% poet: Lorenz Hart
+% piece: Slowly
+% copyright: 1937 by Chappell & Co., Inc. Copyright Renewed
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: 087137ac-a26f-11df-aa1f-0019d11e5a41
+% structure: AABA
+% location: rbk1:308,jfb:259
+% idyoutuberemark1: Frank!
+% idyoutube1: wG6lAtpcI_Q
+% idyoutuberemark2: Chet Baker vocal version (amazing!)
+% idyoutube2: 7iQQGBfbB0k
+% lyricsurl: http://www.elyrics.net/read/f/frank-sinatra-lyrics/my-funny-valentine-lyrics.html
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +73,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Slowly"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "My Funny Valentine"
+	      \fontsize #1 \lower #1  "- Lorenz Hart / Richard Rodgers"
 	    }
 	  }
 	  s
@@ -98,7 +95,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "My Funny Valentine / Richard Rodgers, Lorenz Hart"
 
 
 % include the preparatory stuff, if there is any
@@ -125,18 +122,27 @@
 
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
+	c1:m | g:7/b | c:m7/+bes | a:m7.5- | \myEndLine
+	aes:maj7 | f:m7.9 | d:m7.5- | g:7.9- | \myEndLine
+	\endPart
+
+	\myMark "A"
+	\startPart
+	c1:m | g:7/b | c:m7/+bes | f/a | \myEndLine
+	aes:maj7 | a4:m7.5- d:7.5-.9- g:m7 c:7.5-.9- | f1:m7.5- | bes:7.9- | \myEndLine
 	\endPart
 
 	\myMark "B"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	ees2:maj7 f:m7 | g:m7 f:m7 | ees2 f:m7 | g:m7 f:m7 | \myEndLine
+	ees:maj7 g4:7.5+ g:7 | c2:m7 bes4:m7 a:7.9- | aes1:maj7 | d2:m7.5- g:7.9- | \myEndLine
+	\endPart
+
+	\myMark "A"
+	\startPart
+	c1:m | g:7/b | c:m7/+bes | f/a | \myEndLine
+	aes:maj7 | d2:m7.5- g:7.9- | c:m7 b:7.9 | bes:m7.9 a:7.5-.9+ | \myEndLine
+	aes1:maj7 | f2:m7 bes:7 | ees1*2 | \myEndLine
 	\endPart
 
 	\endSong
@@ -155,21 +161,26 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Allegro" 4 = 130
 	\time 4/4
-	\key c \major
+	\key c \minor
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	c2 d4 ees | d4. ees8 d2 | c2 d4 ees | d4. ees8 d2 |
+	c2 d4 ees | bes'2 aes4 g | f1~ | f |
+
+%% part "A"
+	ees2 f4 g | f4. g8 f2 | ees2 f4 g | f4. g8 f2 |
+	ees2 f4 g | d'4. c8 bes4. a8 | aes1~ | aes2 g4 f |
 
 %% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	bes4 r8 ees, ees4 d | ees2 ees4 d | c'4 r8 ees, ees4 d | ees2 ees4 d |
+	bes' r8 ees, ees4 d | ees2 f4 g | c1~ | c2 d, |
+
+%% part "A"
+	c2 d4 ees | d4. ees8 d2 | ees2 f4 g | f4. g8 f2 |
+	c'2 d4 ees | d4. ees8 d2 | ees1~ | ees |
+	ees,2 f4 g | f4. g8 f2 | ees1~ | ees2. r4 |
 }
 
  }
@@ -183,26 +194,25 @@
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
+	My Fun -- ny Val -- en -- tine,
+	sweet com -- ic val -- en -- tine,
+	you make me smile with my heart. __
 
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+%% part "A"
+	Your looks are laugh -- a -- ble,
+	un -- pho -- to -- graph -- a -- ble,
+	yet, you're my fav -- 'rite work of art. __
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
+	Is your fig -- ure less than Greek;
+	is your mouth a lit -- tle weak
+	when you o -- pen it to speak, are you smart? __
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+%% part "A"
+	But don't change a hair for me,
+	not if you care for me,
+	stay lit -- tle val -- en -- tine, stay! __
+	Each day is Val -- en -- tine's day. __
 }
 
 }
@@ -223,7 +233,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1937 by Chappell & Co., Inc. Copyright Renewed" }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

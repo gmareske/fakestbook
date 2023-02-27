@@ -9,7 +9,6 @@
 
 
 
-
 % this sets the default key to middle C if not already defined
 #(define transpose-key (if (defined? 'transpose-key) transpose-key (ly:make-pitch 0 0 0)))
 %#(define transpose-key (ly:pitch-transpose transpose-key (ly:make-pitch -1 0 0)))
@@ -29,29 +28,24 @@
 
 
 
-
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Blue In Green
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% composer: Miles Davis, Bill Evans
+% piece: Slowly
+% copyright: 1959 JAZZ HORN MUSIC CORP. & WARNER-TAMERLANE PUBLISHING CORP.
+% copyrightextra: WARNER-TAMERLANE PUBLISHING CORP. administers on behalf of itself and JAZZ HORN MUSIC CORP.
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: c73decf2-e30c-11e3-b12b-dbe41a94d84d
+% structure: A
+% location: jfb:64
+% idyoutuberemark1: Original from Kind of Blue
+% idyoutube1: PoPL7BExSQU
+% idyoutuberemark2: Bill Evans in a piano version
+% idyoutube2: mW_7gRH7ASE
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +70,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Slowly"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Blue In Green"
+	      \fontsize #1 \lower #1  "- Miles Davis, Bill Evans"
 	    }
 	  }
 	  s
@@ -98,7 +92,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Blue In Green / Miles Davis, Bill Evans"
 
 
 % include the preparatory stuff, if there is any
@@ -125,24 +119,15 @@
 
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
-	\endPart
-
-	\myMark "B"
-	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	bes1:maj7.11+ | a:7.9+ | d2.:m9 des4:7 | c2:m9 f:7.9- |
+	bes1:maj7 | a:7.5+.9+ | \myEndLine
+	d:m6.9 | e:7.5+.9+ | a:m9 | d:m9 |
+	bes:maj7.11+ | a2.:7.9+ a4:7.9- | d1:m6.9 | \myEndLine
 	\endPart
 
 	\endSong
 	\endChords
 }
-
 
 }
 
@@ -155,56 +140,17 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Allegro" 4 = 130
 	\time 4/4
 	\key c \major
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
-
-%% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	e'2. d4 | c2. bes4 | a2. g4 | f d'2. |
+	e,4. d8 cis d f a | c2. a4 |
+	g2. f4 | c'2. gis4 | b2. a4 | f'2. cis4 |
+	e2. d4 | c2. bes4 | a1\fermata |
 }
-
  }
-}
-\new Lyrics="Lyrics" \lyricsto "Voice" {
-	
-
-
-
-
-\lyricmode {
-
-%% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
-
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
-
-%% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
-
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
-}
-
 }
 	>>
 	\layout {
@@ -223,7 +169,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1959 JAZZ HORN MUSIC CORP. & WARNER-TAMERLANE PUBLISHING CORP." }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

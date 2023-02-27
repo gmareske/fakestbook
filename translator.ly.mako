@@ -115,7 +115,7 @@ if gattr['jazzfont']:
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "${attributes['piece']}"
+	      \fontsize #1 \lower #1 \rotate #7 "${attributes.get('piece','')}"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)

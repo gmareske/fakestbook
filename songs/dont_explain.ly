@@ -33,25 +33,23 @@
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Don't Explain
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% composer: Billie Holiday
+% poet: Arthur Herzog, Jr.
+% piece: Slowly
+% copyright: 1946 by Northern Music Company
+% copyrightextra: Rights Administered by MCA Music Publishing, A Division of MCA INC., New York, NY. Copyright Renewed.
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: 070df83e-0676-11e1-b7fe-0019d11e5a41
+% structure: AABA
+% location: jfb:102,jltd:90
+% idyoutuberemark1: Billie in a radio show
+% idyoutube1: XxwJ9lh-id4
+% idyoutuberemark2: The great Dexter Gordon at the height of his power
+% idyoutube2: k2Lx3n10fkc
+% lyricsurl: http://www.elyrics.net/read/b/billie-holiday-lyrics/don_t-explain-lyrics.html
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +74,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Slowly"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Don't Explain"
+	      \fontsize #1 \lower #1  "- Arthur Herzog, Jr. / Billie Holiday"
 	    }
 	  }
 	  s
@@ -98,7 +96,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Don't Explain / Billie Holiday, Arthur Herzog, Jr."
 
 
 % include the preparatory stuff, if there is any
@@ -125,18 +123,26 @@
 
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
+	d2:m d:m/c | g:m6/bes a:7 | d:m d:m/c | e:7/b bes4:7.5- a4:9 | \myEndLine
+	ees2:9 d4:9.5+ d:7.5+.9- | des2:9 c:9 | f:maj7 bes4:maj7 a:m7 | bes:m6/des c:7.9- bes:7 a:7 | \myEndLine
+	\endPart
+
+	\myMark "A"
+	\startPart
+	d2:m d:m/c | g:m6/bes a:7 | d:m d:m/c | e:7/b bes4:7.5- a4:9 | \myEndLine
+	ees2:9 d4:9.5+ d:7.5+.9- | des2:9 c:9 | f b:m7.5- | e:7.9- a:7.9- | \myEndLine
 	\endPart
 
 	\myMark "B"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	d:m7 g:m7 | c:7 f:maj7 | bes:maj7 e:m7.5- | bes:7 a:7 | \myEndLine
+	d:m7 g:m7 | c:7 f:maj7 | bes:maj7 e:m7.5- | bes:7 a:7 | \myEndLine
+	\endPart
+
+	\myMark "A"
+	\startPart
+	d2:m d:m/c | g:m6/bes a:7 | d:m d:m/c | e:7/b bes4:7.5- a4:9 | \myEndLine
+	ees2:9 d:9.5+ | des:9 c:9 | f bes:6 | f1 | \myEndLine
 	\endPart
 
 	\endSong
@@ -155,21 +161,25 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Adagio" 4 = 72
 	\time 4/4
-	\key c \major
+	\key f \major
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	d4 f2 a8 d, | e1 | d4 f2 e8 f | e1 |
+	c'4 bes2. | bes4 a2 a8 d, | e1~ | e4 r r2 |
+
+%% part "A"
+	d4 f2 a8 d, | e1 | d4 f2 e8 f | e1 |
+	c'4 bes2. | bes4 a2 a8 d, | f1~ | f |
 
 %% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	a8 a c a bes bes4. | g8 g bes g a2 | f8 f a f g g4. | e8 f g g g f e4 |
+	a8 a c a bes bes4. | g8 g bes g a2 | f8 f a f g g4. | e8 f g f e2 |
+
+%% part "A"
+	d4 f2 a8 d, | e1 | d4 f2 e8 f | e1 |
+	c'4 bes2. | bes4 a2 a8 d, | f1~ | f |
 }
 
  }
@@ -183,26 +193,32 @@
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
+	Hush now, Don't Ex -- plain!
+	Just say youl'll re -- main,
+	I'm glad you're back,
+	Don't Ex -- plain! __
 
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+%% part "A"
+	Qui -- et, Don't Ex -- plain!
+	What is there to gain?
+	Skip that lip -- stick,
+	Don't Ex -- plain! __
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
+	You know that I love you
+	and what love en -- dures.
+	All my thoughts are of you
+	for I'm so com -- plete -- ly yours.
+	Cry to hear folks chat -- ter,
+	and I know you cheat.
+	Right or wrong don't mat -- ter
+	when you're with me, sweet.
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+%% part "A"
+	Hush now, Don't Ex -- plain!
+	You're my joy and pain.
+	My life's yours love,
+	Don't Ex -- plain! __
 }
 
 }
@@ -223,7 +239,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1946 by Northern Music Company" }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

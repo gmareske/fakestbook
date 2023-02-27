@@ -10,6 +10,7 @@
 
 
 
+
 % this sets the default key to middle C if not already defined
 #(define transpose-key (if (defined? 'transpose-key) transpose-key (ly:make-pitch 0 0 0)))
 %#(define transpose-key (ly:pitch-transpose transpose-key (ly:make-pitch -1 0 0)))
@@ -30,28 +31,27 @@
 
 
 
+
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Giant Steps
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% composer: John Coltrane
+% piece: Fast
+% copyright: 1974 Jowcol Music.
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: 828326cc-013c-11e1-b823-0019d11e5a41
+% structure: A
+% structureremark: Very weird not repeating structure because of the weird harmony steps
+% location: rbk1:170,hlrjb:130,nrbk2:121,kw:3
+% remark: the key here is of little meaning as the harmony changes key all the time...:) That's why it's written in C.
+% idyoutuberemark1: Mccoy Tyner awesome solo...
+% idyoutube1: PukuQPUKfyU
+% idyoutuberemark2: The original Coltrane version...
+% idyoutube2: BZRnkBK_0no
+% lyricsurl: http://www.bjazz.com/Giant_Steps.html
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +76,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Fast"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Giant Steps"
+	      \fontsize #1 \lower #1  "- John Coltrane"
 	    }
 	  }
 	  s
@@ -98,7 +98,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Giant Steps / John Coltrane"
 
 
 % include the preparatory stuff, if there is any
@@ -125,23 +125,16 @@
 
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
-	\endPart
-
-	\myMark "B"
-	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	b2 d:7 | g bes:7 | ees1 | a2:m7 d:7 | \myEndLine
+	g bes:7 | ees fis:7 | b1 | f2:m7 bes:7.9 | \myEndLine
+	ees1 | a2:m7 d:7 | g1 | cis2:m7 fis:7 | \myEndLine
+	b1 | f2:m7 bes:7 | ees1 | cis2:m7 fis:7 | \myEndLine
 	\endPart
 
 	\endSong
 	\endChords
 }
+
 
 
 }
@@ -155,22 +148,17 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Prestissimo" 4 = 240
 	\time 4/4
 	\key c \major
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
-
-%% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	fis'2 d | b g4. bes8~ | bes1 | b4. a8~ a2 |
+	d bes | g dis4. fis8~ | fis1 | g2 f4. bes8~ |
+	bes1 | b2 a4. d8~ | d1 | dis2 cis4. fis8~ |
+	fis2 fis | g f4. bes8~ | bes1 | fis4. fis8~ fis2 |
 }
+
 
  }
 }
@@ -183,26 +171,30 @@
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
+	Life when we were kids __
+	Was like __ play -- ing gi -- ant steps __
+	We were told __ to ad -- vance __
+	We o -- beyed, __ _ took the chance __
+	You're it __
+}
 
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
 
-%% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
+}
+\new Lyrics="Lyrics" \lyricsto "Voice" {
+	
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+
+
+
+
+\lyricmode {
+
+%% part "A"
+	Think of life as chess __
+	Cap -- ture __ one piece at a time __
+	For -- ward east, __ cas -- tle next __
+	Not the pace __ _ but the steps __
+	Check -- mate __
 }
 
 }
@@ -223,7 +215,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1974 Jowcol Music." }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

@@ -10,6 +10,8 @@
 
 
 
+
+
 % this sets the default key to middle C if not already defined
 #(define transpose-key (if (defined? 'transpose-key) transpose-key (ly:make-pitch 0 0 0)))
 %#(define transpose-key (ly:pitch-transpose transpose-key (ly:make-pitch -1 0 0)))
@@ -30,28 +32,27 @@
 
 
 
+
+
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Blue Bossa
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% composer: Kenny Dorham
+% poet: Joan Cartwright
+% piece: Bossa Nova
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: f7fdc5e0-db41-11e0-a31c-0019d11e5a41
+% structure: A
+% location: rbk1:51
+% remark: Play last 4 bars twice more to end
+% idyoutube1: EhQfGODnvww
+% idyoutube2: -0mNSP1452o
+% idyoutube3: 6sr7BXinJMw
+% idyoutube4: lKEEVECH58Q
+% lyricsurl: http://fyicomminc.bizland.com/music/lyrics/bluebossa.htm
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +77,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Bossa Nova"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Blue Bossa"
+	      \fontsize #1 \lower #1  "- Joan Cartwright / Kenny Dorham"
 	    }
 	  }
 	  s
@@ -98,7 +99,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Blue Bossa / Kenny Dorham, Joan Cartwright"
 
 
 % include the preparatory stuff, if there is any
@@ -123,25 +124,31 @@
 	\startChords
 	\startSong
 
-	\myMark "A"
-	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
-	\endPart
+	\partial 4 s4 |
 
-	\myMark "B"
-	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	\repeat volta 3 {
+
+		\myMark "A"
+		\startPart
+		c1*2:m7 | f:m7 | \myEndLine
+		d1:m7.5- | g:7 | c1*2:m7 | \myEndLine
+		ees1:m7 | aes:7 | des1*2:maj | \myEndLine
+		d1:m7.5- | g:7 |
+	} \alternative {
+		{
+			c1:m7 | d2:m7.5- g:7 | \myEndLineVoltaNotLast
+		}
+		{
+			c1:m7 | c:m7 | \myEndLineVoltaLast
+		}
+	}
 	\endPart
 
 	\endSong
 	\endChords
 }
+
+
 
 
 }
@@ -155,22 +162,30 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Allegro" 4 = 150
 	\time 4/4
-	\key c \major
+	\key c \minor
+
+	\partial 4 g'4 |
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
-
-%% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	\repeat volta 3 {
+		g'4. f8 ees d4 c8~ | c2. bes4 | aes2 g'4. f8~ | f1 |
+		f4. ees8 d c4 bes8~ | bes2. aes4 | g2 f'4. ees8~ | ees1 |
+		ees4. des8 c bes4 aes8~ | aes2. ges4 | ges f8 bes~ bes f aes4~ | aes1 |
+		aes4 g8 bes~ bes2 | aes4 g8 bes~ bes4. aes8 |
+	} \alternative
+	{
+		{
+			g1~ | g2. g4 |
+		}
+		{
+			g1~ | g2. r4 |
+		}
+	}
 }
+
+
 
  }
 }
@@ -180,29 +195,66 @@
 
 
 
+% this version of the lyrics is from the internet adjusted for the real book.
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
+	A place in -- side my heart __
+	Is where you live __
+	Mem -- ories of our start __
+	The love you give __
 
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+	Days when we're a -- lone __
+	And you are in my arms __
+	The_blue -- ness of the_true -- ness of our love __
+}
 
-%% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+
+}
+\new Lyrics="Lyrics" \lyricsto "Voice" {
+	
+
+
+
+
+
+\lyricmode {
+
+%% part "A"
+	_ Nights of moon -- lit skies __
+	A gen -- tle kiss __
+	Some -- thing in your eyes __
+	Fills me with bliss __
+
+	Hold me in your arms __
+	And then I will re -- call __
+	The_blue -- ness of the_true -- ness of our love __
+
+	The
+}
+
+
+}
+\new Lyrics="Lyrics" \lyricsto "Voice" {
+	
+
+
+
+
+
+
+\lyricmode {
+
+%% part "A"
+	The thought of how we met __
+	Still lin -- gers on __
+	How can I for -- get __
+	That mag -- ic dawn __
+
+	All the warm de -- sire __
+	The fi -- re in your touch __
+	The_blue -- ness of the_true -- ness of our love __
 }
 
 }
@@ -223,7 +275,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "-- help me fill it out this copyright notice --" }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

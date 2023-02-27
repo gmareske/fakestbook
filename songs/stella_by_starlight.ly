@@ -33,25 +33,20 @@
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Stella By Starlight
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% composer: Victor Young
+% poet: Ned Washington
+% piece: Slowly, with Expression
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
+% uuid: afea10ce-edc0-11e0-9cc4-0019d11e5a41
 % structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% location: rbk1:408
+% remark: there are a couple of different lyric versions for this song
+% idyoutube1: Iqs3w1Q5sto
+% idyoutube2: IbzxJuvbH08
+% lyricsurl: http://www.lyrics007.com/Ella%20Fitzgerald%20Lyrics/Stella%20By%20Starlight%20Lyrics.html
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +71,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Slowly, with Expression"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Stella By Starlight"
+	      \fontsize #1 \lower #1  "- Ned Washington / Victor Young"
 	    }
 	  }
 	  s
@@ -98,7 +93,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Stella By Starlight / Victor Young, Ned Washington"
 
 
 % include the preparatory stuff, if there is any
@@ -123,20 +118,22 @@
 	\startChords
 	\startSong
 
+	\partial 4 s4 |
+
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
+	e1:m7.5- | a:7.9- | c:m7 | f:7 | \myEndLine
+	f:m7 | bes:7 | ees:maj7 | aes:7 | \myEndLine
+	bes:maj7 | e2:m7.5- a:7.9- | d1:m7 | bes2:m7 ees:7 | \myEndLine
+	f1:maj7 | e2:m7.5- a:7 | a1:m7.5- | d:7.9- | \myEndLine
 	\endPart
 
 	\myMark "B"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	g1*2:7.5+ | c:m7 | \myEndLine
+	aes:7 | bes:maj7 | \myEndLine
+	e1:m7.5- | a:7.9- | d:m7.5- | g:7.9- | \myEndLine
+	c:m7.5- | f:7.9- | bes1*2:maj7 | \myEndLine
 	\endPart
 
 	\endSong
@@ -155,21 +152,23 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Allegro" 4 = 130
 	\time 4/4
-	\key c \major
+	\key bes \major
+
+	\partial 4 bes'4 |
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	a1~ | a4 g a bes | f1~ | f2. f4 |
+	g1~ | g4 f f g | bes,1~ | bes2. c4 |
+	ees d c bes | d2. e4 | g4. f8 f2~ | f2. g4 |
+	bes a g f | g2 a4 bes | d4. c8 c2~ | c d |
 
 %% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	ees1~ | ees4 ees ees d | f1~ | f4 ees \tuplet 3/2 { d c bes } |
+	d2 d2~ | d4 c bes a | c1~ | c2. bes4 |
+	a1~ | a4 g a bes | f1~ | f4 f f ees |
+	ges1~ | ges4 ges ges f | f1~ | f1 |
 }
 
  }
@@ -180,29 +179,21 @@
 
 
 
+% this version of the lyrics is from the fake book but adjusted for the real book (the real book has no lyrics)...
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
-
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+	The song a rob -- in sings,
+	Through years of end -- less springs,
+	The mur -- mur of a brook at even -- ing tides.
+	That rip -- ples through a nook where two lov -- ers hide.
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
-
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+	That great sym -- pho -- nic theme,
+	That's Stel -- la by star -- light,
+	And not a dream,
+	My heart and I ag -- ree,
+	She's eve -- ry -- thing on_this earth to me.
 }
 
 }
@@ -223,7 +214,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "-- help me fill it out this copyright notice --" }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

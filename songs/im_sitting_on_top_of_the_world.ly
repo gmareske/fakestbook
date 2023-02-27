@@ -33,25 +33,17 @@
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: I'm Sitting On Top Of The World
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
-% typesetter: Mark Veltzer <mark.veltzer@gmail.com>
+% composer: Ray Handerson
+% poet: Sam M. Lewis and Joel Young
+% piece: Moderately
+% copyright: 1925 Leo Feist, INC.
+% copyrightextra: Renewed 1953 Warock Corp.
+% typesetter: Jordan Eldredge <JordanEldredge@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: 8c31fdb4-da7f-11e3-ad9a-d3417ee0a02e
+% structure: AABA
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +68,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Moderately"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "I'm Sitting On Top Of The World"
+	      \fontsize #1 \lower #1  "- Sam M. Lewis and Joel Young / Ray Handerson"
 	    }
 	  }
 	  s
@@ -98,7 +90,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "I'm Sitting On Top Of The World / Ray Handerson, Sam M. Lewis and Joel Young"
 
 
 % include the preparatory stuff, if there is any
@@ -123,20 +115,40 @@
 	\startChords
 	\startSong
 
-	\myMark "A"
-	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
-	\endPart
+	\partial 4 s4 |
 
-	\myMark "B"
-	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	\repeat volta 2 {
+
+		\myMark "A"
+		\startPart
+		f2 f4:maj7 f:7 | bes1 | f | f | \myEndLine
+		g:7 | c:7 | f2 g4:m f/a | g2:m7 c:7.5+ | \myEndLine
+		\endPart
+
+		\myMark "A"
+		\startPart
+		f f4:maj7 f:7 | bes1 | f | f | \myEndLine
+		g:7 | c:7 | f | f:7 | \myEndLine
+		\endPart
+
+		\myMark "B"
+		\startPart
+		bes | e:7 | f | f | \myEndLine
+		d2:m d:m7+ | d:m7 d:m6 | g1:7 | c2.:7 c4:7.5+ | \myEndLine
+		\endPart
+
+		\myMark "A"
+		\startPart
+		f2 f4:maj7 f:7 | bes1 | f2 c:9.5+ | f1 | \myEndLine
+		g2:7 g:7.5-/des | c1:7 |
+	} \alternative {
+		{
+			f2 des:7 | g:7 c:7.5+ | \myEndLineVoltaNotLast
+		}
+		{
+			f bes | f1 | \myEndLineVoltaLast
+		}
+	}
 	\endPart
 
 	\endSong
@@ -155,21 +167,30 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
-	\time 4/4
-	\key c \major
+	\tempo "Allegro" 4 = 130
+	\time 2/2
+	\key f \major
+
+	\partial 4 c'4 |
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	\repeat volta 2 {
+		c a r c | d bes r d | c1~ | c4 c,8 c~ c d f4 | g1~ | g4 g8 g~ g a g4 | f1~ |
+		f2. c'4 |
 
-%% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+		c a r c | d bes r d | c1~ | c4 c,8 c~ c d f4 | g1~ | g4 g8 g~ g a g4 | f1~ |
+		f4 f8 g a bes c cis | d4 bes d4. bes8 | d4 e2 d4 | c c8 c~ c b c4 | a1 | a4 f a f | a d2. |
+		r4 a8 a~ a d a4 | g2. c4 |
+
+		c a r c | d bes r d | c1~ | c4 c,8 c~ c d f4 | g1~ | g4 c8 c~ c g a4 |
+	} \alternative {
+		{
+			f1~ | f2. c'4 |
+		}
+		{
+			f,1~ | f2. r4 |
+		}
+	}
 }
 
  }
@@ -181,28 +202,14 @@
 
 
 \lyricmode {
+	I'm Sit -- ting On Top Of The World, __ just roll -- ing a -- long, __ just roll -- ing a -- long. __
 
-%% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
+	I'm quit -- ing the blues of the world, __ just sing -- ing a song, __ just sing -- ing a song. __
 
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
-
-%% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
-
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+	"\"Glor" -- y Hal -- el -- lu -- "jah,\"" I just phoned the Par -- son, "\"Hey," Par get read -- y to "call.\"" Just like Hump -- ty Dump -- ty,
+	I'm go -- ing to fall, I'm Sit -- ting On Top Of The World, __ just roll -- ing a long, __
+	just roll -- ing a long. __ I'm
+	long. __
 }
 
 }
@@ -223,10 +230,10 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1925 Leo Feist, INC." }
 	}
 	\fill-line {
-		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }
+		\smaller \smaller { "Typeset by Jordan Eldredge <JordanEldredge@gmail.com>" }
 	}
 	\fill-line {
 		\smaller \smaller \concat { "Built at: " #(get-build-info 'build-date)  }

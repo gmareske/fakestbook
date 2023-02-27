@@ -33,25 +33,24 @@
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Nature Boy
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% composer: Eben Ahbez
+% poet: Eben Ahbez
+% piece: Med. Ballad
+% copyright: 1948, Eben Ahbez
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
+% uuid: 13d57a4a-a26f-11df-8711-0019d11e5a41
 % structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% structureremark: this tunes structure can also be AA' or maybe ABAC since the A and the part B are VERY similar.
+% location: rbk2:260,nrbk1:231
+% remark: 7th bar of letters A and B were originally 2 bars each. Melody is straight eights, though rather freely interpreted rhythmically.
+% idyoutuberemark1: Nat King Cole in a the cannonical version...
+% idyoutube1: Iq0XJCJ1Srw
+% idyoutuberemark2: Miles in a slow version
+% idyoutube2: GDS_nqHaUvc
+% lyricsurl: http://www.metrolyrics.com/nature-boy-lyrics-nat-king-cole.html
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +75,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Med. Ballad"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Nature Boy"
+	      \fontsize #1 \lower #1  "- Eben Ahbez"
 	    }
 	  }
 	  s
@@ -98,7 +97,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Nature Boy / Eben Ahbez"
 
 
 % include the preparatory stuff, if there is any
@@ -123,20 +122,22 @@
 	\startChords
 	\startSong
 
+	\partial 8 s8 |
+
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
+	d1:m | e2:m7.5- a:7 | d1:m | e2:m7.5- a:7 | \myEndLine
+	d:m d:m7+ | d:m7 d:m6 | g:m6 d:m | e1:m7.5- | \myEndLine
+	a1*2:7 | d:m | \myEndLine
+	e:7.9- | a:7 | \myEndLine
 	\endPart
 
 	\myMark "B"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	d1:m | e2:m7.5- a:7 | d1:m | e2:m7.5- a:7 | \myEndLine
+	d:m d:m7+ | d:m7 d:m6 | g:m6 d:m | e1:m7.5- | \myEndLine
+	a1*2:7 | d1:m | \OPC b:m7.5- | \myEndLine
+	e:7.9- | a:7.5+ | d:m | \LPC e2:m7.5- \RPC a:7 | \myEndLine
 	\endPart
 
 	\endSong
@@ -155,21 +156,23 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Moderato" 4 = 110
 	\time 4/4
-	\key c \major
+	\key d \minor
+
+	\partial 8 a8 |
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	a'8 f d2. | r4 r8 a e' f g bes | a f d2. | r4 r8 a e' f g bes |
+	a4. d8 cis2 | a4. c!8 b2 | g4. bes!8 a4. d,8 | e2. r8 a, |
+	a'2. g4 | e2. a,4 | g'2. f4 | d2. a4 |
+	f'2. e4 | b2. c4 | cis1 | r2 r4 r8 a |
 
 %% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	a'8 f d2. | r4 r8 a e' f g bes | a f d2. | r4 r8 a e' f g bes |
+	a4. d8 cis2 | a4. c!8 b2 | g4. bes!8 a4. d,8 | e2. r8 a, |
+	a'2. g4 | e2. a,4 | g'2. f4 | d2. a4 |
+	f'4. e8 b4. a8 | g'4 f2 a,8 e' | d1 | r |
 }
 
  }
@@ -183,26 +186,26 @@
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
+	There was a boy,
+	A ver -- y strange en -- chant -- ed boy
+	They say he wan -- dered ver -- y far, ver -- y far,
+	o -- ver land and sea;
 
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+	A lit -- tle shy
+	and sad of eye,
+	But ver -- y wise
+	was he
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
+	And then one day,
+	One mag -- ic day he came my way,
+	And as we spoke of man -- y things, fools and kings,
+	this he said to me: The
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+	great -- est thing
+	you'll ev -- er learn
+	is just to love and be loved
+	in re -- turn.
 }
 
 }
@@ -223,7 +226,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1948, Eben Ahbez" }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

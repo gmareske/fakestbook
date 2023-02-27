@@ -33,25 +33,18 @@
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Bye Bye Blackbird
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% composer: Ray Henderson
+% poet: Mort Dixon
+% piece: Moderately
+% copyright: 1926 (Renewed) Warner Bros. Inc.
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: 7b863bbe-f2a2-11e0-9257-0019d11e5a41
+% structure: ABCD
+% location: rbk2:51,jfb:75
+% idyoutube1: HMPHMu7LVhQ
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +69,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Moderately"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Bye Bye Blackbird"
+	      \fontsize #1 \lower #1  "- Mort Dixon / Ray Henderson"
 	    }
 	  }
 	  s
@@ -98,7 +91,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Bye Bye Blackbird / Ray Henderson, Mort Dixon"
 
 
 % include the preparatory stuff, if there is any
@@ -123,21 +116,38 @@
 	\startChords
 	\startSong
 
-	\myMark "A"
-	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
-	\endPart
+	\repeat volta 2 {
 
-	\myMark "B"
-	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
-	\endPart
+		\myMark "A"
+		\startPart
+		f1. d2:7 | g:m7 c:7.9 | f1 | \myEndLine
+		f/a | aes:dim7 | g2:m7 c1.:7 | \myEndLine
+		\endPart
+
+		\myMark "B"
+		\startPart
+		g2:m ees/g | g:m6 ees/g | g1:m7 | c:7 | \myEndLine
+		g:m7 | c:7 | f2:maj7 f1.:6 | \myEndLine
+		\endPart
+
+		\myMark "C"
+		\startPart
+		f1*2:7 | a1:m7.5- | d:7 | \myEndLine
+		g1*2:m | g1:m7.5- | c:7 | \myEndLine
+		\endPart
+
+		\myMark "D"
+		\startPart
+		f1*2 | ees1:7 | d:7 | \myEndLine
+		g1.:m7 c2:7 |
+	} \alternative {
+		{
+			f d:m7 | g:m7 c:7 | \myEndLineVoltaNotLast
+		}
+		{
+			f bes | bes:m6 f:6 | \myEndLineVoltaLast \endPart
+		}
+	}
 
 	\endSong
 	\endChords
@@ -155,21 +165,35 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Moderato" 4 = 116
 	\time 4/4
-	\key c \major
+	\key f \major
 
-%% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	\repeat volta 2 {
 
-%% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	%% part "A"
+		a'4 a a a | bes a a2 | a4 g g2 | g4 f f2 |
+		f1 | g | f2 e2~ | e1 |
+
+	%% part "B"
+		bes'4 bes bes bes | c bes bes2 | bes4 a a2 | a4 g g2 |
+		g1 | a | g2 f~ | f1 |
+
+	%% part "C"
+		f4 c' c c | c bes a g | g1 | fis |
+		d4 bes' bes bes | bes a g f | f1 | e |
+
+	%% part "D"
+		a4 a a a | bes a a2 | a4 g g2 | g4 fis fis2 |
+		g2 bes~ | bes e, |
+	} \alternative {
+		{
+			f2 r | r1 |
+		}
+		{
+			f1~ | f |
+		}
+	}
 }
 
  }
@@ -183,26 +207,24 @@
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
-
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+	Pack up all my care and woe,
+	here I go, Sing -- ing low,
+	Bye Bye Black -- bird, __
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
+	Where some -- bod -- y waits for me,
+	sug -- ar's sweet, so is she,
+	Bye Bye Black -- bird. __
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+%% part "C"
+	No one here can love or un -- der -- stand me,
+	oh, what hard luck sto -- ries they all hand me.
+
+%% part "D"
+	Make my bed and light the light,
+	I'll ar -- rive late to -- night,
+	black -- bird __ bye bye.
+	bye. __
 }
 
 }
@@ -223,7 +245,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1926 (Renewed) Warner Bros. Inc." }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

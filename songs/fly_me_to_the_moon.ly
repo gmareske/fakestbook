@@ -33,25 +33,23 @@
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Fly Me To The Moon
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% subtitle: In Other Words
+% composer: Bart Howard
+% poet: Bart Howard
+% piece: Moderately, with a beat
+% copyright: 1954 and renewed 1982 Hampshire House Publishing Corp., New York NY.
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
+% uuid: 3244f4ae-159d-11e1-bbe3-0019d11e5a41
 % structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% location: jfb:119
+% idyoutuberemark1: The one and only Frank
+% idyoutube1: oCW9Hey6IVY
+% idyoutuberemark2: I didn't know that Diana Krall knew piano this well...
+% idyoutube2: -b8brVSAAQA
+% lyricsurl: http://www.metrolyrics.com/fly-me-to-the-moon-lyrics-frank-sinatra.html
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +74,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Moderately, with a beat"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Fly Me To The Moon"
+	      \fontsize #1 \lower #1  "- Bart Howard"
 	    }
 	  }
 	  s
@@ -98,7 +96,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Fly Me To The Moon / Bart Howard"
 
 
 % include the preparatory stuff, if there is any
@@ -123,21 +121,32 @@
 	\startChords
 	\startSong
 
-	\myMark "A"
-	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
-	\endPart
+	\repeat volta 2 {
 
-	\myMark "B"
-	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
-	\endPart
+		\myMark "A"
+		\startPart
+		a1:m7 | d:m7 | g:7 | c:maj7 | \myEndLine
+		f:maj7 | b:m7.5- | e:7.9- | a2.:m7 a4:7.9- | \myEndLine
+		d1:m7 | g2.:7.9 g4:7.9- | c1:maj7.9 | a2.:m7 a4:m7.9 | \myEndLine
+		d1:m7 | g:7 | f2:dim7/c c:maj7 | b:m7 e:7 | \myEndLine
+		\endPart
+
+		\myMark "B"
+		\startPart
+		a1:m7 | d:m7 | g:7 | c:maj7 | \myEndLine
+		f:maj7 | b:m7.5- | e:7.9- | a2.:m7 a4:7.9- | \myEndLine
+		d1:m7 | g2.:7.9 g4:7/f |
+		\endPart
+	} \alternative {
+		{
+			e1:m7.5- | a:7.9- | \myEndLine
+			d:m7 | d2.:m7/g g4:7.9- | c1:6 | b2:m7 e:7 | \myEndLineVolta
+		}
+		{
+			e2:m7.5- bes:7.9 | a1:7.9- | \myEndLine
+			d:m7 | g2.:7 g4:7.9- | c2:6 bes4:6 b:6 | c1:6.9 | \myEndLineVoltaLast
+		}
+	}
 
 	\endSong
 	\endChords
@@ -155,21 +164,32 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Allegro" 4 = 130
 	\time 4/4
 	\key c \major
 
-%% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	\repeat volta 2 {
 
-%% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	%% part "A"
+		c'4 b a8 g4. | f g8 a4 c | b a g8 f4. | e1 |
+		a4 g f8 e4. | d4. e8 f4 a | gis f e8 d4. | c2. cis4 |
+		d8 a'4 a8~ a2~ | a4 c2 b4 | g1~ | g2. b,4 |
+		c8 f4 f8~ f2~ | f4 a2 g4 | f2 e2~ | e1 |
+
+	%% part "B"
+		c'4 b a8 g4. | f g8 a4 c | b a g8 f4. | e1 |
+		a4 g f8 e4. | d4 e4 f a | gis f e8 d4. | c2. cis4 |
+		d8 a'4 a8~ a2~ | a4 c2 b4 |
+	} \alternative {
+		{
+			g1~ | g2. gis4 |
+			a8 c,4 c8~ c2~ | c4 c2 d4 | c1 | r |
+		}
+		{
+			e'1~ | e2. c4 |
+			d8 a4 a8~ a2~ | a4 b2 d4 | c1~ | c2. r4 |
+		}
+	}
 }
 
  }
@@ -183,26 +203,19 @@
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
-
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+	Fly Me To The Moon, and let me play a -- mong the stars;
+	let me see what spring is like on Ju -- pi -- ter and Mars.
+	In oth -- er words, __ hold my hand! __
+	In oth -- er words, __ dar -- ling kiss me! __
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
+	Fill my heart with song, and let me sing for -- ev -- er -- more;
+	you are all I long for all I wor -- ship and a -- dore.
+	In oth -- er words, __ please be true! __
+	In oth -- er words, __ I love you!
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+%% part "Volta"
+	true! __ In oth -- er words, __ I love you! __
 }
 
 }
@@ -223,7 +236,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1954 and renewed 1982 Hampshire House Publishing Corp., New York NY." }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

@@ -33,25 +33,23 @@
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Moonlight in Vermont
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% composer: Karl Suessdorf
+% poet: John Blackburn
+% piece: Freely
+% copyright: 1944-1945 by MICHAEL H GOLDSEN, INC.
+% copyrightextra: Renewed 1972-1973 MICHAEL H GOLDSEN, INC.
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: 557b082e-e0d8-11e3-a037-b365e6166d43
+% structure: AABA
+% location: jfb:256
+% idyoutuberemark1: Louis and Ella
+% idyoutube1: Rg0hg5YD7sE
+% idyoutuberemark2: Franks version
+% idyoutube2: _CiizL8Vfu8
+% lyricsurl: http://www.azlyrics.com/lyrics/franksinatra/moonlightinvermont.html
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +74,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Freely"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Moonlight in Vermont"
+	      \fontsize #1 \lower #1  "- John Blackburn / Karl Suessdorf"
 	    }
 	  }
 	  s
@@ -98,7 +96,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Moonlight in Vermont / Karl Suessdorf, John Blackburn"
 
 
 % include the preparatory stuff, if there is any
@@ -125,18 +123,24 @@
 
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
+	ees2:6 c:m7 | f:m7 e:7.9+ | ees:6 c:m7 | des1:9 | f2:m7 bes:7.11 | ees f4:m7 bes:7 | \myEndLine
+	\endPart
+
+	\myMark "A"
+	\startPart
+	ees2:6 c:m7 | f:m7 e:7.9+ | ees:6 c:m7 | des1:9 | f2:m7 bes:7.11 | ees1 | \myEndLine
 	\endPart
 
 	\myMark "B"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	a2:m11 d:7 | g:maj7 gis:dim7 | a:m11 aes:9.11+ | g:maj7 g:6 | \myEndLine
+	bes:m11 ees:7 | aes:maj7 a:dim7 | bes:m11 ees:9 | aes bes:7.5+.9- | \myEndLine
+	\endPart
+
+	\myMark "A"
+	\startPart
+	ees2:6 c:m7 | f:m7 e:7.9+ | ees:6 c:m7 | des1:9 | f2:m7 bes:7.11 | ees1 | \myEndLine
+	c2:m7 f4:9 e:9 | ees1:maj9 | \myEndLine
 	\endPart
 
 	\endSong
@@ -155,21 +159,23 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
-	\time 4/4
-	\key c \major
+	\tempo "Allegro" 4 = 130
+	\time 2/2
+	\key ees \major
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	c'4 bes g f | g1 | c4 bes g4. ees8 | f g ces,2. | g'4 f ees c! | ees1 |
+
+%% part "A"
+	c'4 bes g f | g1 | c4 bes g4. ees8 | f g ces,2. | g'4 f ees c! | ees1 |
 
 %% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	d8 d d d~ d d4 d8 | d d4 d8 d d4 d8 | d d d d'~ d4 c8 d | b!1 |
+	ees,8 ees ees ees~ ees ees4 ees8 | ees ees4 ees8 ees ees4 ees8 | ees ees ees ees'~ ees4 des8 ees | c2 ces |
+
+%% part "A"
+	c!4 bes g f | g1 | c4 bes g4. ees8 | f g ces,2. | g'4 f ees c! | ees1 |
+	b!8 c ees g c d b! cis! | bes!1 |
 }
 
  }
@@ -183,26 +189,18 @@
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
+	Pen -- nies in a stream, fall -- ing leaves, a sy -- ca -- more, Moon -- light In Ver -- mont.
 
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+%% part "A"
+	I -- cy fin -- ger -- waves, ski trails on a moun -- tain -- side, snow -- light in Ver -- mont.
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
+	Tel -- e -- graph ca -- __ bles, they sing down the high -- way and tra -- vel each bend __ in the road,
+	peo -- ple who meet __ in this ro -- man -- tic set -- ting are so hyp -- no -- tized __ by the love -- ly
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+%% part "A"
+	ev' -- ning sum -- mer breeze, warb -- ling of a mea -- dow -- lark, Moon -- light In Ver -- mont,
+	you and I and Moon -- light In Ver -- mont.
 }
 
 }
@@ -223,7 +221,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1944-1945 by MICHAEL H GOLDSEN, INC." }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

@@ -10,6 +10,7 @@
 
 
 
+
 % this sets the default key to middle C if not already defined
 #(define transpose-key (if (defined? 'transpose-key) transpose-key (ly:make-pitch 0 0 0)))
 %#(define transpose-key (ly:pitch-transpose transpose-key (ly:make-pitch -1 0 0)))
@@ -30,28 +31,25 @@
 
 
 
+
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: As Time Goes By
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% composer: Herman Hupfeld
+% poet: Herman Hupfeld
+% piece: Ballad
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: 0a7b423c-7a4e-11e1-8d67-878c1414bdce
+% structure: AABA
+% location: rbk1:31
+% idyoutuberemark1: Classic Billie Holiday
+% idyoutube1: vYoet7-qDHI
+% idyoutuberemark2: The classic Sinatra performance with the Casablanca footage
+% idyoutube2: AY62QByUYJQ
+% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/As%20Time%20Goes%20By%20Lyrics.html
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +74,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Ballad"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "As Time Goes By"
+	      \fontsize #1 \lower #1  "- Herman Hupfeld"
 	    }
 	  }
 	  s
@@ -98,7 +96,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "As Time Goes By / Herman Hupfeld"
 
 
 % include the preparatory stuff, if there is any
@@ -123,25 +121,39 @@
 	\startChords
 	\startSong
 
+	\partial 8 s8 |
+
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
+	\repeat volta 2 {
+		f2:m7 bes:7 | bes:m6 bes:7 | ees:6 f:m7 | fis:dim7 g:m7 | \myEndLine
+		f1:7 | f2:m7 bes:7 |
+	} \alternative {
+		{
+			ees1:maj7 | f2:m7 bes:7 | \myEndLineVoltaNotLast
+		}
+		{
+			ees1:6 | bes2:m7 ees:7 | \myEndLineVoltaLast
+		}
+	}
 	\endPart
 
 	\myMark "B"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	aes1:maj7 | c:7 | f:m | a:dim | \myEndLine
+	c2:m aes:7 | f1:7 | bes2:7 bes:dim | bes1:7 | \myEndLine
+	\endPart
+
+	\myMark "A"
+	\startPart
+	f2:m7 bes:7 | bes:m6 bes:7 | ees:6 f:m7 | fis:dim7 g:m7 | \myEndLine
+	f1:7 | g2:m7 c:7 | f:m7 bes:7 | ees4:6 des:7 ees:6 \OPC bes:7 | \myEndLine
 	\endPart
 
 	\endSong
 	\endChords
 }
+
 
 
 }
@@ -155,22 +167,34 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Andante" 4 = 76
 	\time 4/4
-	\key c \major
+	\key ees \major
+
+	\partial 8 g'8 |
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	\repeat volta 2 {
+		aes g f ees f4. g8 | bes aes g f aes4. bes8 | ees d c bes c2 | r2 r4 d |
+		f8 ees d c d4 ees | bes bes ees, f |
+	} \alternative {
+		{
+			g1~ | g2 r4 r8 g |
+		}
+		{
+			ees1~ | ees2 r |
+		}
+	}
 
 %% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	ees8 f ees c'~ c4 c | c8 des c b c2 | f,8 g f c'~ c4 c | c8 des c b c2 |
+	g8 aes g ees'~ ees4 ees | ees8 d ees d f4 d | c c g g | bes2. r8 g |
+
+%% part "A"
+	aes g f ees f f4 g8 | bes aes g f aes aes4 bes8 | ees d c bes c2 | r r4 d |
+	f8 ees d c d4 ees | bes bes2 g4 | bes2 bes | ees2. r8 g, |
 }
+
 
  }
 }
@@ -183,26 +207,46 @@
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
+	You must re -- mem -- ber this
+	A kiss is still a kiss
+	A sigh is still a sigh
+	The fun -- da -- men -- tal things app -- ly
+	As Time Goes By __
 
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+%% part "A"
+	And _
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
+	Moon -- light and love __ songs- nev -- er out of date
+	Hearts full of pas -- __ sion- jea -- lou -- sy and hate
+	Wo -- men needs man- __ and man must have his mate
+	That no one can de -- ny
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+%% part "A"
+	It's still the same old sto -- ry
+	A fight for love and glo -- ry
+	A case of do or die
+	The world will al -- ways wel -- come lov -- ers
+	As Time Goes By
+}
+
+
+}
+\new Lyrics="Lyrics" \lyricsto "Voice" {
+	
+
+
+
+
+
+\lyricmode {
+
+%% part "A"
+	And when two lov -- ers woo
+	They still say: "\"I" love "you\""
+	On that you can re -- ly
+	No mat -- ter what the fu -- ture brings
+	As Time Goes _ _ By __
 }
 
 }
@@ -223,7 +267,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "-- help me fill it out this copyright notice --" }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

@@ -77,6 +77,6 @@
 
 
 				% the magic happens here
-  #@(map (lambda (filename) (begin (ly:parser-include-string (ly:gulp-file filename)) (ly:parser-include-string "\\pageBreak"))) ly-source-files)
+  #@(map (lambda (filename) (begin (ly:parser-include-string (ly:gulp-file filename)) (ly:parser-include-string "\\pageBreak"))) (reverse! ly-source-files))
 
 }

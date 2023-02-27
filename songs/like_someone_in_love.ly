@@ -33,25 +33,16 @@
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Like Someone In Love
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
-% typesetter: Mark Veltzer <mark.veltzer@gmail.com>
+% composer: Johnny Burke, Jimmy Van Heusen
+% poet: Johnny Burke, Jimmy Van Heusen
+% piece: Moderately
+% copyright: 1944 Bourne Co. and Dorsey Bros. Music, Inc. Division of Music Sales Corporation
+% typesetter: Jordan Eldredge <JordanEldredge@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: a2084076-da7f-11e3-86db-a7e6565c22fc
+% structure: ABAB'
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +67,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Moderately"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Like Someone In Love"
+	      \fontsize #1 \lower #1  "- Johnny Burke, Jimmy Van Heusen"
 	    }
 	  }
 	  s
@@ -98,7 +89,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Like Someone In Love / Johnny Burke, Jimmy Van Heusen"
 
 
 % include the preparatory stuff, if there is any
@@ -123,20 +114,38 @@
 	\startChords
 	\startSong
 
-	\myMark "A"
-	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
-	\endPart
+	\repeat volta 2 {
 
-	\myMark "B"
-	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+		\myMark "A"
+		\startPart
+		c2:maj7 c/b | c:6/a c/g | d:7/fis g:7/f | e:m7 ees:7 | \myEndLine
+		d1:m7 | g2.:7 g4:9.5+ | c1:maj7 | g4:m7 c2:9 c4:9.5+ | \myEndLine
+		\endPart
+
+		\myMark "B"
+		\startPart
+		f2.:6 f4:5+ | b2:m7 e:7 | a1:maj7 | a:6 | \myEndLine
+		a:m7 | d:7 | d1:7 | g:7.5+ | \myEndLine
+		\endPart
+
+		\myMark "A"
+		\startPart
+		c2:maj7 c/b | c:6/a c/g | d:7/fis g:7/f | e:m7 ees:7 | \myEndLine
+		d1:m7 | g2.:7 g4:9.5+ | c1:maj7 | g4:m7 c2:9 c4:9.5+ | \myEndLine
+		\endPart
+
+		\myMark "B'"
+		\startPart
+		f2.:6 f4:5+ | b2:m7 e:7 | a1:maj7 | d2.:9 dis4:dim | \myEndLine
+		e2:m7 a:7 | d:m7 g:7.9- |
+	} \alternative {
+		{
+			c a:m7 | d:9 g:7 | \myEndLineVoltaNotLast
+		}
+		{
+			c f:m6 | c1 | \myEndLineVoltaLast
+		}
+	}
 	\endPart
 
 	\endSong
@@ -155,21 +164,35 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
-	\time 4/4
+	\tempo "Allegro" 4 = 130
+	\time 2/2
 	\key c \major
 
-%% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	\repeat volta 2 {
 
-%% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	%% part "A"
+		e4 e2 e4 | e4 a g e | d d2 b'4 | g1 |
+		f4 f2 c'4 | b2. a4 | g4 g2 e'4 | d1 |
+
+	%% part "B"
+		d4 d2 cis4 | e d cis b | e,2 e~ | e1 |
+		c'4 c2 b4 | d c b a | d,1 | dis |
+
+	%% part "A"
+		e4 e2 e4 | e a g e | d d2 b'4 | g1 |
+		f4 f2 c'4 | b2. a4 | g4 g2 e'4 | d1 |
+
+	%% part "B"
+		d4 d2 cis4 | e d cis b | e, e2 e4 | fis2. fis4 |
+		g4 g2 g4 | f d'2 b4 |
+	} \alternative {
+		{
+			c1 | R |
+		}
+		{
+			c1~ | c |
+		}
+	}
 }
 
  }
@@ -183,26 +206,23 @@
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
-
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+	Late -- ly I find my -- self out gaz -- ing at stars,
+	hear -- ing gui -- tars Like Some -- one In Love.
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
+	Some -- times the things I do a -- stound me,
+	__ most -- ly when -- ev -- er you're a -- round me.
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+%% part "A"
+	Late -- ly I seem to walk as though I had wings,
+	bump in -- to things Like Some -- one In Love.
+
+%% part "B"
+	Each time I look at you I'm linmp as a glove
+	and feel -- ing Like Some -- one In Love.
+
+%% part "Volta"
+	Love. __
 }
 
 }
@@ -223,10 +243,10 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1944 Bourne Co. and Dorsey Bros. Music, Inc. Division of Music Sales Corporation" }
 	}
 	\fill-line {
-		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }
+		\smaller \smaller { "Typeset by Jordan Eldredge <JordanEldredge@gmail.com>" }
 	}
 	\fill-line {
 		\smaller \smaller \concat { "Built at: " #(get-build-info 'build-date)  }

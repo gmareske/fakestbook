@@ -10,6 +10,7 @@
 
 
 
+
 % this sets the default key to middle C if not already defined
 #(define transpose-key (if (defined? 'transpose-key) transpose-key (ly:make-pitch 0 0 0)))
 %#(define transpose-key (ly:pitch-transpose transpose-key (ly:make-pitch -1 0 0)))
@@ -30,28 +31,25 @@
 
 
 
+
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Don't Blame Me
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% composer: Jimmy McHugh
+% poet: Dorothy Fields
+% piece: Swing
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: d01b9fc8-e077-11e3-8a42-b3378bc59d8a
+% structure: AABA
+% location: rbk1:125
+% idyoutuberemark1: Nat King Cole
+% idyoutube1: CkqKURwl9m0
+% idyoutuberemark2: Monk in a monked version of the tune
+% idyoutube2: KshrtLXBdl8
+% lyricsurl: http://www.sing365.com/music/lyric.nsf/Don%27t-Blame-Me-1958-version-lyrics-Nat-King-Cole/C27E88B65E6C613D48256AF1000ED478
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +74,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Swing"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Don't Blame Me"
+	      \fontsize #1 \lower #1  "- Dorothy Fields / Jimmy McHugh"
 	    }
 	  }
 	  s
@@ -98,7 +96,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Don't Blame Me / Jimmy McHugh, Dorothy Fields"
 
 
 % include the preparatory stuff, if there is any
@@ -125,23 +123,35 @@
 
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
+	\repeat volta 2 {
+		c2:6 f4:m7 bes:7 | e2:m7 a:7 | d:m7 g:7 | c:maj7 a:m7 | \myEndLine
+		d:m7 g:7 | e:m7.5- a:7 |
+	} \alternative {
+		{
+			d:m7 g:7 | c:6 d4:m7 g:7 | \myEndLineVoltaNotLast
+		}
+		{
+			d2:m7 g:7 | c:6 g4:m7 c:7 | \myEndLineVoltaLast
+		}
+	}
 	\endPart
 
 	\myMark "B"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	f1 | e:7 | a1*2:m7 | \myEndLine
+	d:7 | d2:m7 aes:7 | g1:7 | \myEndLine
+	\endPart
+
+	\myMark "A"
+	\startPart
+	c2 e:m7.5- | a1:7 | d2:m7 g:7 | c:maj7 a:m7 | \myEndLine
+	d:m7 g:7 | e:m7.5- a:7 | d:m7 g:7 | c1:6 | \myEndLine
 	\endPart
 
 	\endSong
 	\endChords
 }
+
 
 
 }
@@ -155,22 +165,32 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Allegro" 4 = 130
 	\time 4/4
 	\key c \major
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	\repeat volta 2 {
+		g'2 bes | a2. g4 | \tuplet 3/2 { f4 f f } e e | d2. c4 |
+		\tuplet 3/2 { f f f } e d | \tuplet 3/2 { g g g } f e |
+	} \alternative {
+		{
+			a2 b | g1 |
+		}
+		{
+			a2 a | c1 |
+		}
+	}
 
 %% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	gis4 a gis a | ais b ais b | d2 c4 c~ | c1 |
+	d2 c4 c~ | c2 \tuplet 3/2 { d,4 fis b } | a2 aes | g1 |
+
+%% part "A"
+	g2 bes | a2. g4 | \tuplet 3/2 { f4 f f } e e | d2. c4 |
+	\tuplet 3/2 { f f f } e d | \tuplet 3/2 { g g g } f e | a2 a | c2. r4 |
 }
+
 
  }
 }
@@ -180,29 +200,48 @@
 
 
 
+% these are lyrics from the internet adjusted for the real book
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
-
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+	Don't Blame Me
+	For fal -- ling in love with you.
+	I'm un -- der your spell
+	But how can I help it?
+	Don't Blame Me.
+	_ _ _
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
+	I can't help it
+	If that dog -- gone moon a -- bove __
+	Makes me want __
+	Some -- one like you to love.
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+%% part "A"
+	Blame your kiss
+	As sweet as a kiss can be,
+	And blame all your charms
+	That melt in my arms,
+	But Don't Blame Me.
+}
+
+
+}
+\new Lyrics="Lyrics" \lyricsto "Voice" {
+	
+
+
+
+
+
+\lyricmode {
+
+%% part "A"
+	Can't you see
+	When you do the things you do
+	If I can't con -- ceal
+	The thrill that I'm fee -- ling,
+	_ _ _ Don't Blame Me.
 }
 
 }
@@ -223,7 +262,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "-- help me fill it out this copyright notice --" }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

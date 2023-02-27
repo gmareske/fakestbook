@@ -10,6 +10,7 @@
 
 
 
+
 % this sets the default key to middle C if not already defined
 #(define transpose-key (if (defined? 'transpose-key) transpose-key (ly:make-pitch 0 0 0)))
 %#(define transpose-key (ly:pitch-transpose transpose-key (ly:make-pitch -1 0 0)))
@@ -30,28 +31,28 @@
 
 
 
+
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Gentle Rain
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% composer: Louis Bonfa
+% poet: Matt Dubey
+% piece: Bossa
+% copyright: 1931 (renewed 1959) EMI Robbins Catalog, Inc
+% copyrightextra: Used by Persmission of CPP/Belwin, Inc, Miami, FL. International Copyright Secured. All Rights Reserved.
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
+% uuid: 04bbfb74-0128-11e1-9e2a-0019d11e5a41
 % structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% structureremark: This tune has a weird structure because the part B has different lengths
+% location: rbk1:169,nrbk3:128
+% idyoutuberemark1: Tony Bennet slow version
+% idyoutube1: uJGqzudEDDE
+% idyoutuberemark2: The wonderful ballad version of Astrud Gilberto
+% idyoutube2: s6ndU7GKpjI
+% lyricsurl: http://lyrics.wikia.com/Astrud_Gilberto:The_Gentle_Rain
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +77,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Bossa"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Gentle Rain"
+	      \fontsize #1 \lower #1  "- Matt Dubey / Louis Bonfa"
 	    }
 	  }
 	  s
@@ -98,7 +99,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Gentle Rain / Louis Bonfa, Matt Dubey"
 
 
 % include the preparatory stuff, if there is any
@@ -123,25 +124,33 @@
 	\startChords
 	\startSong
 
-	\myMark "A"
-	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
-	\endPart
+	\repeat volta 2 {
 
-	\myMark "B"
-	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+		\myMark "A"
+		\startPart
+		a1*2:m6 | b1:m7.5- | e:7 | \myEndLine
+		a2:m7 d:7 | g:m7 c:7 | f1*2:6 | \myEndLine
+		\endPart
+
+		\myMark "B"
+		\startPart
+		fis1:m7.5- | b:7.9- | e:m7.5- | a:7.9- | \myEndLine
+		d:m7.5- | b2:m7.5- e:7 |
+	} \alternative {
+		{
+			a1:m6 | bes:7 | \myEndLineVoltaNotLast
+		}
+		{
+			a2:m7 d:7 | g:m7 c:7 | f1:6 | c:7 | \myEndLine
+			f:6 | e:m7 | a:m | \OPC e:7 | \myEndLineVoltaLast
+		}
+	}
 	\endPart
 
 	\endSong
 	\endChords
 }
+
 
 
 }
@@ -155,22 +164,30 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Allegro" 4 = 130
 	\time 4/4
-	\key c \major
+	\key a \minor
 
-%% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	\repeat volta 2 {
 
-%% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	%% part "A"
+		e2. d8 c | c2. d8 e | e2. d8 c | b2. c8 d |
+		e1~ | e2 e8 g e c | d1~ | d2. r4 |
+
+	%% part "B"
+		c'2. b8 a | a2. g8 fis | bes2. a8 g | g2. f8 e |
+		aes2. g8 f | f2. e8 d |
+	} \alternative {
+		{
+			e1~ | e2. r4 |
+		}
+		{
+			e1~ | e2 e8 g e c | d1~ | d2 e8 g e c |
+			d1~ | d2 b'8 d b g | a1~ | a1 |
+		}
+	}
 }
+
 
  }
 }
@@ -180,29 +197,34 @@
 
 
 
+% this version of the lyrics is from the internet but adjusted for the real book (the real book has no lyrics)...
 \lyricmode {
+	We both are lost and a -- lone in the world,
+	Walk with me __ in the Gen -- tle Rain. __
+	Don't be af -- raid; I've a hand for your hand,
+	And I will be your love for a while. __
 
-%% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
+	sad, __
 
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+	like the Gen -- tle Rain, __
+	like the Gen -- tle Rain, __
+	like the Gen -- tle Rain, __
+}
 
-%% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+}
+\new Lyrics="Lyrics" \lyricsto "Voice" {
+	
+
+
+
+
+
+\lyricmode {
+	I feel your tears as they fall on my cheek,
+	They are warm __ in the Gen -- tle Rain. __
+	Don't be af -- raid; I've a hand for your hand,
+	And our love will be sweet, will be
 }
 
 }
@@ -223,7 +245,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1931 (renewed 1959) EMI Robbins Catalog, Inc" }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

@@ -33,25 +33,14 @@
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Heart And Soul
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
-% typesetter: Mark Veltzer <mark.veltzer@gmail.com>
+% composer: Frank Losser, Hoagy Carmichael
+% poet: Frank Losser, Hoagy Carmichael
+% typesetter: Jordan Eldredge <JordanEldredge@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: 2c3e3512-da7f-11e3-9149-3707f62022e6
+% structure: AABA
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +65,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 ""
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Heart And Soul"
+	      \fontsize #1 \lower #1  "- Frank Losser, Hoagy Carmichael"
 	    }
 	  }
 	  s
@@ -98,7 +87,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Heart And Soul / Frank Losser, Hoagy Carmichael"
 
 
 % include the preparatory stuff, if there is any
@@ -120,27 +109,35 @@
 
 
 \chordmode {
-	\startChords
 	\startSong
+	\startChords
 
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
+	f2 d:m7 | g:m7 c:7 | f d:m7 | g:m7 c:7 | \myEndLine
+	f d:m7 | g:m7 c:7 | f1 | g2:m7 c:9 | \myEndLine
+	\endPart
+
+	\myMark "A"
+	\startPart
+	f d:m7 | g:m7 c:7 | f d:m7 | g:m7 c:7 | \myEndLine
+	f d:m7 | g:m7 c:7 | f1 | f2. f4:7 | \myEndLine
 	\endPart
 
 	\myMark "B"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	bes2 a:7 | d:7 g:7 | c:7 f:7 | e:7 a:7 | \myEndLine
+	bes a:7 | d:7 g:7 | c:9 f:7 | e:7 c:7 | \myEndLine
 	\endPart
 
-	\endSong
+	\myMark "A"
+	\startPart
+	f d:m7 | g:m7 c:7 | f d:m7 | g:m7 c:7 | \myEndLine
+	f d:m7 | g:m7 c:7 | a:7 d:7 | g:m7 g4:7 c:7 | f1~ | f | \myEndLine
+	\endPart
+
 	\endChords
+	\endSong
 }
 
 
@@ -155,21 +152,25 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
-	\time 4/4
-	\key c \major
+	\tempo "Andante Moderato" 4 = 88
+	\time 2/2
+	\key f \major
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	f4 f f2~ | f8 f e d e f g4 | a a a2~ | a8 a g f g a bes4 |
+	c2 f, | r8 d' c bes a4 g | f2~ f8 g a bes | c4 bes8 a g2 |
+
+%% part "A"
+	f4 f f2~ | f8 f e d e f g4 | a a a2~ | a8 a g f g a bes4 |
+	c2 f, | r8 d' c bes a4 g | f2~ f8 g a bes | c4 f,2. |
 
 %% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	r8 d' c bes a4. g8 | fis2 g | e f | d e |
+	r8 d' c bes a4. g8 | fis2 g | e f | d e4. c8 |
+
+%% part "A"
+	f4 f f2~ | f8 f e d e f g4 | a a a2~ | a8 a g f g a bes4 |
+	c2 f, | r8 d' c bes a4 g | a1 | r8 bes a g f4 e | f1~ | f2. r4 |
 }
 
  }
@@ -183,26 +184,20 @@
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
+	Heart and soul, __ I fell in love with you Heart and Soul, __ the way a fool would do,
+	Mad -- ly, be -- case you held me tight __ and stole a kiss in the night.
 
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+%% part "A"
+	Heart and soul, __ I begged to be a -- dored; Lost con -- trol, __ and tum -- bled o -- ver -- board
+	Glad -- ly, that mag -- ic night we kissed. __ there in the moon -- mist.
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
+	Oh! but your lips were thrill -- ing, much too thirll -- ing. Nev -- er be -- fore were
+	mine so strange -- ly will -- ing. But
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+%% part "A"
+	now I see __ what one em -- brace can do. Look at me, __ it's got me love -- ing you, Mad -- ly
+	that lit -- tle kiss your stole Heald all my heart and soul. __
 }
 
 }
@@ -223,10 +218,10 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "-- help me fill it out this copyright notice --" }
 	}
 	\fill-line {
-		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }
+		\smaller \smaller { "Typeset by Jordan Eldredge <JordanEldredge@gmail.com>" }
 	}
 	\fill-line {
 		\smaller \smaller \concat { "Built at: " #(get-build-info 'build-date)  }

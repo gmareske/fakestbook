@@ -33,25 +33,23 @@
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Tenderly
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% composer: Walter Gross
+% poet: Jack Lawrence
+% piece: Moderately
+% copyright: 1946, 1947, 1987 EDWIN H. MORRIS & COMPANY, A Division of MPL Communications, Inc.
+% copyrightextra: Renewed 1974, 1975 EDWIN H. MORRIS & COMPANY, A Division of MPL Communications, Inc. International Copyright Secured. All Rights Reserved.
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: 37e8d9d8-db6c-11e3-8007-f7449ea11e17
+% structure: ABAC
+% location: jfb:381
+% idyoutuberemark1: Beautiful lyric version by Chet Baker
+% idyoutube1: H6mfWun73vI
+% idyoutuberemark2: Vocal version by Sarah Vaughn
+% idyoutube2: qNi6M_A9AzU
+% lyricsurl: http://www.metrolyrics.com/tenderly-lyrics-ella-fitzgerald.html
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +74,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Moderately"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Tenderly"
+	      \fontsize #1 \lower #1  "- Jack Lawrence / Walter Gross"
 	    }
 	  }
 	  s
@@ -98,7 +96,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Tenderly / Walter Gross, Jack Lawrence"
 
 
 % include the preparatory stuff, if there is any
@@ -123,20 +121,30 @@
 	\startChords
 	\startSong
 
+	\partial 4. s4. |
+
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
+	ees2.:maj7 | aes:9 | ees:m7 | aes:9 | \myEndLine
+	f:m7 | des:9 | ees4 g:m7 f:m7 | ees2.:maj7 | \myEndLine
 	\endPart
 
 	\myMark "B"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	f2.:m7.5- | bes:7 | f:m7.5- | bes2:7 b4:dim7 | \myEndLine
+	c2.:m7 | f:7 | f:m9 | bes:7 | \myEndLine
+	\endPart
+
+	\myMark "A"
+	\startPart
+	ees2.:maj7 | aes:9 | ees:m7 | aes:9 | \myEndLine
+	f:m7 | des:9 | ees4 g:m7 f:m7 | ees2.:maj7 | \myEndLine
+	\endPart
+
+	\myMark "C"
+	\startPart
+	f2.:m7.5- | bes2:7 b4:dim7 | c2.:m7 | f2:9 fis4:dim7 | \myEndLine
+	g4.:m7 c:7 | f2:m7 bes4:7 | ees2.*2 | \myEndLine
 	\endPart
 
 	\endSong
@@ -155,21 +163,27 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
-	\time 4/4
-	\key c \major
+	\tempo "Allegro" 4 = 130
+	\time 3/4
+	\key ees \major
+
+	\partial 4. bes'8 c ees |
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	d4. bes8 c ees | d2 bes8 ges | f2.~ | f4 r8 ees f aes |
+	g4. ees8 f aes | g2 ees8 ces | bes2.~ | bes4 r bes |
 
 %% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	ces2 bes'4 | g2 bes,4 | ces ees bes' | g2 f4 |
+	ees g f' | d2 f,4 | bes2.~ | bes4 r8 bes8 c ees |
+
+%% part "A"
+	d4. bes8 c ees | d2 bes8 ges | f2.~ | f4 r8 ees f aes |
+	g4. ees8 f aes | g2 ees8 ces | bes2.~ | bes4 r bes |
+
+%% part "C"
+	ces ees bes' | g2 f4 | ees g f' | d4. ees8 c d |
+	bes4. c8 aes bes | g4. f8 aes d, | ees2.~ | ees4. r8 r4 |
 }
 
  }
@@ -183,26 +197,18 @@
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
-
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+	The eve -- ning breeze ca -- ressed the trees Ten -- der -- ly, __
+	The termb -- ling trees em -- braced the breeze Ten -- der -- ly. __
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
+	Then you and I came wand -- er -- ing by and lost in a sigh were we. __
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+%% part "A"
+	The shore was kissed by sea and mist Ten -- der -- ly. __
+	I can't for -- get how two hearts met breath -- less -- ly. __
+
+%% part "C"
+	Your arms op -- ened wide and closed me in -- side; you took my lips, you took my love so Ten -- der -- ly. __
 }
 
 }
@@ -223,7 +229,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1946, 1947, 1987 EDWIN H. MORRIS & COMPANY, A Division of MPL Communications, Inc." }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

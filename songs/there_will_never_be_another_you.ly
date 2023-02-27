@@ -10,6 +10,9 @@
 
 
 
+
+
+
 % this sets the default key to middle C if not already defined
 #(define transpose-key (if (defined? 'transpose-key) transpose-key (ly:make-pitch 0 0 0)))
 %#(define transpose-key (ly:pitch-transpose transpose-key (ly:make-pitch -1 0 0)))
@@ -30,28 +33,27 @@
 
 
 
+
+
+
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: There Will Never Be Another You
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% composer: Harry Warren
+% poet: Mack Gordon
+% piece: Easy Swing
+% copyright: 1942, 1987 Twentieth Century Music Corporation
+% copyrightextra: Renewed 1970 Twentieth Century Music Corporation. All Rights Controlled by Morley Music Co. International Copyright Secured. All Rights Reserved.
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
+% uuid: e30e1074-eaf3-11e0-a377-0019d11e5a41
 % structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% structureremark: the structure of this tune could also be thought of ABAC since in the AB interpretation the first 8 bars of the A and B part are identical.
+% location: jfb:384,rbk1:426
+% idyoutube1: kh_NnsbIqNQ
+% idyoutube2: Til3lV_ItZE
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +78,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Easy Swing"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "There Will Never Be Another You"
+	      \fontsize #1 \lower #1  "- Mack Gordon / Harry Warren"
 	    }
 	  }
 	  s
@@ -98,7 +100,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "There Will Never Be Another You / Harry Warren, Mack Gordon"
 
 
 % include the preparatory stuff, if there is any
@@ -119,24 +121,29 @@
 	\transpose c \transpose-key {
 
 
+
+
+
 \chordmode {
 	\startChords
 	\startSong
 
+	\partial 4 s4 |
+
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
+	ees1:maj7 | aes:maj7 | d1:m7.5- | g:7.9- | \myEndLine
+	c1*2:m7 | bes1:m7 | ees:7 | \myEndLine
+	aes:maj7 | des:7.9 | ees:6 | c:m7 | \myEndLine
+	f1*2:7 | f1:m7/bes | bes:7 | \myEndLine
 	\endPart
 
 	\myMark "B"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	ees1:maj7 | aes:maj7 | d1:m7.5- | g:7.9- | \myEndLine
+	c1*2:m7 | bes1:m7 | ees:7 | \myEndLine
+	aes:maj7 | des:7.9 | g2:m7 c:7 | fis1:dim7 | \myEndLine
+	ees2:6 d:7.9- | g:7.5+ c:7.9- | f:m7 bes:7.9 | ees1:6 | \myEndLine
 	\endPart
 
 	\endSong
@@ -154,22 +161,27 @@
 
 
 
+
+
+
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Allegro" 4 = 130
 	\time 4/4
-	\key c \major
+	\key ees \major
+
+	\partial 4 bes4 |
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	c d ees f | g bes f4. ees8 | f1~ | f2. g4 |
+	ees f g bes | c ees c4. bes8 | c1~ | c2. bes4 |
+	ees c bes aes | g f g4. aes8 | bes4 g f ees | f ees f4. ees8 |
+	d'4 c bes a | g f g f | aes1~ | aes2. bes,4 |
 
 %% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	c d ees f | g bes f4. ees8 | f1~ | f2. g4 |
+	ees f g bes | c ees c4. bes8 | c1~ | c2. bes4 |
+	ees4 c bes aes | g f g4. aes8 | bes4 g f ees | d'2. c4 |
+	bes ees d c | bes ees, bes' aes | f2 g | ees2. r4 |
 }
 
  }
@@ -180,29 +192,22 @@
 
 
 
+
+
+
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
-
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+	There will be man -- y oth -- er nights like this, __
+	and I'll be stand -- ing here with some -- one new, __
+	There will be oth -- er songs to sing, an -- oth -- er fall, an -- oth -- er spring,
+	but There Will Nev -- er Be An -- oth -- er You. __
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
-
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+	There will be oth -- er lips that I may kiss, __
+	but they won't thrill me like yours used to do. __
+	Yes, I may dream a mil -- lion dreams, but how can they come true,
+	if there will nev -- er ev -- er be an -- oth -- er you?
 }
 
 }
@@ -223,7 +228,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1942, 1987 Twentieth Century Music Corporation" }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

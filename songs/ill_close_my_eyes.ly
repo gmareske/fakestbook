@@ -10,6 +10,9 @@
 
 
 
+
+
+
 % this sets the default key to middle C if not already defined
 #(define transpose-key (if (defined? 'transpose-key) transpose-key (ly:make-pitch 0 0 0)))
 %#(define transpose-key (ly:pitch-transpose transpose-key (ly:make-pitch -1 0 0)))
@@ -30,28 +33,27 @@
 
 
 
+
+
+
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: I'll Close My Eyes
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% composer: Billy Reid
+% poet: Buddy Kaye
+% piece: Medium Swing
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
+% uuid: e7277c50-a26e-11df-863c-0019d11e5a41
 % structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% structureremark: this tunes structure could also be thought of as ABAC since the begining of the A and part B (the first 8 bars) under the AB interpretation is exactly the same.
+% location: rbk3:130
+% remark: the My version is from Amit Golan
+% idyoutube1: 7Oh-Dl-KbF0
+% idyoutube2: u6lXbfx1hHw
+% lyricsurl: http://lyricsplayground.com/alpha/songs/i/illclosemyeyes.shtml
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +78,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Medium Swing"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "I'll Close My Eyes"
+	      \fontsize #1 \lower #1  "- Buddy Kaye / Billy Reid"
 	    }
 	  }
 	  s
@@ -98,7 +100,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "I'll Close My Eyes / Billy Reid, Buddy Kaye"
 
 
 % include the preparatory stuff, if there is any
@@ -119,24 +121,29 @@
 	\transpose c \transpose-key {
 
 
+
+
+
 \chordmode {
 	\startChords
 	\startSong
 
+	\partial 8*5 s8 s2 |
+
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
+	f1*2:maj7 | e1:m7.5- | a:7.9- | \myEndLine
+	d:m7 | g:7 | c:m7 | f:7 | \myEndLine
+	bes:maj7 | ees:7 | f1*2:maj7 | \myEndLine
+	b1:m7.5- | e:7 | a2:m7 aes:dim7 | g:m7 ges:7/c | \myEndLine
 	\endPart
 
 	\myMark "B"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	f1*2:maj7 | e1:m7.5- | a:7.9- | \myEndLine
+	d:m7 | g:7 | c:m7 | f:7 | \myEndLine
+	bes:maj7 | ees:7 | a1:m7.5- | d:7.9- | \myEndLine
+	g:m7 | c:7 | f2:maj7 d:7 | g:m7 c:7 | \myEndLine
 	\endPart
 
 	\endSong
@@ -154,22 +161,27 @@
 
 
 
+
+
+
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Allegro" 4 = 150
 	\time 4/4
-	\key c \major
+	\key f \major
+
+	\partial 8*5 c8 bes'4 c8 a~ |
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	a1 | r4 r8 c, bes'4 a | a4 g8 e8~ e2 | r4 a, g'4 a8 f~ |
+	f1 | r4 r8 f a4 f8 ees8~ | ees1 | r2 r4 ees |
+	des d c'2 | r4 r8 bes f4 g | a1 | r2 r4 a |
+	gis1 | r4 r8 e g4 f | e1 | r4 r8 c bes'4 c8 a~ |
 
 %% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	a1 | r4 r8 c, bes'4 a | a4 g8 e8~ e2 | r4 a, g'4 a8 f~ |
+	f1 | r4 r8 f a4 f8 ees8~ | ees1 | r2 r4 ees |
+	des d c'2 | r4 r8 bes f4 g | a1 | r4 r8 a c4 b |
+	bes4. d,8 e4 f | g2 a | f1~ | f2 r2 |
 }
 
  }
@@ -180,29 +192,33 @@
 
 
 
+
+
+
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
+	I'll Close My Eyes __
+	To eve -- ry -- one but you __
+	And when I do __
+	I'll_see_you stand -- ing there __
 
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+	I'll lock my heart
+	To any_other ca -- ress
+	I'll_never_say yes
+	To_a_new love af -- fair
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
+	Then_I'll Close My Eyes __
+	To eve -- ry -- thing that's gay __
+	If you_are not there __
+	Oh,_to_share_each love -- ly day __
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+	And through the years
+	In_those moments When_we're_far apart
+%%Do -- n't you know
+	I'll Close My Eyes
+	And I'll see you_with my heart __
 }
 
 }
@@ -223,7 +239,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "-- help me fill it out this copyright notice --" }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

@@ -33,25 +33,17 @@
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: How Deep Is the Ocean
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
-% typesetter: Mark Veltzer <mark.veltzer@gmail.com>
+% subtitle: How High Is the Sky
+% composer: Irving Berlin
+% poet: Irving Berlin
+% piece: Slowly
+% copyright: 1932 Irving Berling (Renewed)
+% typesetter: Jordan Eldredge <JordanEldredge@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: 1f41adf6-da81-11e3-a9b9-277d2c72c477
+% structure: ABAC
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +68,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Slowly"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "How Deep Is the Ocean"
+	      \fontsize #1 \lower #1  "- Irving Berlin"
 	    }
 	  }
 	  s
@@ -98,7 +90,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "How Deep Is the Ocean / Irving Berlin"
 
 
 % include the preparatory stuff, if there is any
@@ -120,27 +112,35 @@
 
 
 \chordmode {
-	\startChords
 	\startSong
+	\startChords
 
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
+	c1:m7 | d2:m7.5- g:7 | c1:m7 | a2:m7.5- d:7 | \myEndLine
+	g1:m7 | a2:m7.5- d:7 | g:m7 c:7 | f:m7 bes:7 | \myEndLine
 	\endPart
 
 	\myMark "B"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	ees1:maj7 | bes2:m7 ees:7 | aes1:7 | aes:7 | \myEndLine
+	c:m7.5- | f:7 | bes:7 | d2:m7.5- g:7 | \myEndLine
 	\endPart
 
-	\endSong
+	\myMark "A"
+	\startPart
+	c1:m7 | d2:m7.5- g:7 | c1:m7 | a2:m7.5- d:7 | \myEndLine
+	g1:m7 | a2:m7.5- d:7 | g:m7 c:7 | f:m7 bes:7 | \myEndLine
+	\endPart
+
+	\myMark "C"
+	\startPart
+	ees1:7 | g2:m7.5- c:7 | f1:m7 | aes2:m7 des:7 | \myEndLine
+	ees1:maj7 | f:7 | f2:m7 bes:7 | ees1:maj7 | \myEndLine
+	\endPart
+
 	\endChords
+	\endSong
 }
 
 
@@ -155,21 +155,25 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Andante" 4 = 88
 	\time 4/4
-	\key c \major
+	\key ees \major
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	r4 ees \tuplet 3/2 { ees d ees } | g4 g2. | r4 ees \tuplet 3/2 { ees d ees } | g2. r4 |
+	r4 bes \tuplet 3/2 { bes a bes } | c4 c2. | r4 bes \tuplet 3/2 { bes a bes } | c1 |
 
 %% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	r4 ees ees ees | ees8 bes4 bes8~ bes4 bes4 | bes ges ges ges~ | ges1 |
+	ges4 ees ees ees~ | ees d2 ees4 | ges f f f~ | f2 r |
+
+%% part "A"
+	r4 ees \tuplet 3/2 { ees d ees } | g4 g2. | r4 ees \tuplet 3/2 { ees d ees } | g2. r4 |
+	r4 bes \tuplet 3/2 { bes a bes } | c4 c2. | r4 bes \tuplet 3/2 { bes a bes } | c1 |
+
+%% part "C"
+	r4 ees ees des | des c c bes | r aes \tuplet 3/2 { aes g f } | aes1 |
+	r4 g \tuplet 3/2 { g f ees } | g4 g2. | r4 f \tuplet 3/2 { f ees d } | ees2. r4 |
 }
 
  }
@@ -183,26 +187,20 @@
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
-
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+	How much do I love you? I'll tell you no lie.
+	How Deep Is The O -- cean, how high is the sky?
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
+	How man -- y times a day __ do I think of you? __
+	How man -- y ros -- es are sprink -- led with dew? __
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+%% part "A"
+	How far would I trav -- el to be whre you are?
+	How far is the jour -- ney for here to a star?
+
+%% part "C"
+	And if I ev -- er lost you, how much would I cry?
+	How Deep Is The O -- cean, how high is the sky?
 }
 
 }
@@ -223,10 +221,10 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1932 Irving Berling (Renewed)" }
 	}
 	\fill-line {
-		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }
+		\smaller \smaller { "Typeset by Jordan Eldredge <JordanEldredge@gmail.com>" }
 	}
 	\fill-line {
 		\smaller \smaller \concat { "Built at: " #(get-build-info 'build-date)  }

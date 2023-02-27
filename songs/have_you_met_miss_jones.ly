@@ -33,25 +33,22 @@
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Have you met Miss Jones?
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% composer: Richard Rodgers
+% poet: Lorenz Hart
+% piece: Medium Swing
+% copyright: 1937, by Chappell & Co., Inc. Copyright Renewed
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: fe106f6c-a26e-11df-abb3-0019d11e5a41
+% structure: AABA
+% location: rbk1:186,jfb:143
+% idyoutuberemark1: Frank!
+% idyoutube1: wZIVgszUs7c
+% idyoutuberemark2: Art Tatum on piano solo
+% idyoutube2: h3YNBVpxOcQ
+% lyricsurl: http://www.lyrics007.com/Ella%20Fitzgerald%20Lyrics/Have%20You%20Met%20Miss%20Jones%20Lyrics.html
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +73,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Medium Swing"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Have you met Miss Jones?"
+	      \fontsize #1 \lower #1  "- Lorenz Hart / Richard Rodgers"
 	    }
 	  }
 	  s
@@ -98,7 +95,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Have you met Miss Jones? / Richard Rodgers, Lorenz Hart"
 
 
 % include the preparatory stuff, if there is any
@@ -125,18 +122,35 @@
 
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
+	f1:maj7 | fis:dim7 | g:m7 | c:7 | \myEndLine
+	a:m7 | d:m7 | g:m7 | c:7 | \myEndLine
+	\endPart
+
+	\myMark "A"
+	\startPart
+	f:maj7 | fis:dim7 | g:m7 | c:7 | \myEndLine
+	a:m7 | d:m7 | c:m7 | f:7 | \myEndLine
 	\endPart
 
 	\myMark "B"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
+	bes:maj7 | aes2:m7 des:7 | ges1:maj7 | e2:m7 a:7 | \myEndLine
+	d1:maj7 | aes2:m7 des:7 | ges1:maj7 | g2:m7 c:7 | \myEndLine
+	\endPart
+
+	\myMark "A"
+	\startPart
+	\repeat volta 2 {
+		f1:maj7 | fis:dim7 | g:m7 | c2:7 bes:7 | \myEndLine
+		a:m7 d:7.9- | g:m7 c:7 |
+	} \alternative {
+		{
+			f d:m7 | g:m7 c:7 | \myEndLineVoltaNotLast
+		}
+		{
+			f1*2 | \myEndLineVoltaLast
+		}
+	}
 	\endPart
 
 	\endSong
@@ -155,21 +169,35 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Allegro" 4 = 160
 	\time 4/4
-	\key c \major
+	\key f \major
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	\repeat unfold 2 {
+		a'4 d, c d | c2. r4 | d e f g | a bes c2 |
+		d4 g, f g | f2. a4 |
+	} \alternative {
+		{ bes1~ | bes2. r4 |}
+		{ c1~ | c4 d d d | }
+	}
 
 %% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	c4 bes f g | aes aes aes aes | aes ges des ees | e! e e e |
+	e d fis a | des2 des | bes1~ | bes2. r4 |
+
+%% part "A"
+	\repeat volta 2 {
+		a4 d, c d | c2. r4 | d e f g | a bes c d |
+		e1~ | e4 d a g |
+	} \alternative {
+		{
+			f1 | r |
+		}
+		{
+			f1~ | f2. r4 |
+		}
+	}
 }
 
  }
@@ -183,26 +211,23 @@
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
+	"\"Have" You Met Miss "Jones?\"" Some one said as we shook hands.
+	She was just Miss Jones to me. __
 
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+%% part "A"
+	Then I said "\"Miss" Jones, You're a girl who un -- der -- stands,
+	I'm a man who must be "free.\"" __
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
+	And all at once I lost my breath,
+	and all at once was scared to death,
+	and all at once I owned the earth and sky! __
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+%% part "A"
+	Now I've met Miss Jones, and we'll keep on meet -- ing till we die, __
+	Miss Jones and I.
+
+	I. __
 }
 
 }
@@ -223,7 +248,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1937, by Chappell & Co., Inc. Copyright Renewed" }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

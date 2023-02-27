@@ -33,25 +33,14 @@
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: A Cup Of Coffee, A Sandwich And You
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
-% typesetter: Mark Veltzer <mark.veltzer@gmail.com>
+% composer: Joseph Meyer
+% poet: Billy Rose, Al Dubin
+% piece: Moderato
+% typesetter: Jordan Eldredge <JordanEldredge@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: efaf8a18-da80-11e3-83d3-8b992af01517
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +65,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Moderato"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "A Cup Of Coffee, A Sandwich And You"
+	      \fontsize #1 \lower #1  "- Billy Rose, Al Dubin / Joseph Meyer"
 	    }
 	  }
 	  s
@@ -98,7 +87,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "A Cup Of Coffee, A Sandwich And You / Joseph Meyer, Billy Rose, Al Dubin"
 
 
 % include the preparatory stuff, if there is any
@@ -120,27 +109,47 @@
 
 
 \chordmode {
-	\startChords
 	\startSong
+	\startChords
 
-	\myMark "A"
-	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
+	\partial 2. s4 f2:5+ |
+
+	\repeat volta 2 {
+
+		\myMark "A"
+		\startPart
+		bes1 | ees:m | bes | bes2 b:dim7 | \myEndLine
+		c4:m7 f2.:7 | f1:5+ | bes2 b:dim7 | f:7 f:5+ | \myEndLine
+		\endPart
+
+		\myMark "A"
+		\startPart
+		bes1 | ees:m | bes | bes2 b:dim7 | \myEndLine
+		c4:m7 f2.:7 | f1:5+ | bes | bes2 f4:7 f:m6 | \myEndLine
+		\endPart
+
+		\myMark "B"
+		\startPart
+		ees1*2:7 | a1:m | d4:7 g2.:7 | \myEndLine
+		c1:7 | c:7 | c:m7 | f2:7 f:5+ | \myEndLine
+		\endPart
+
+		\myMark "A"
+		\startPart
+		bes1 | ees:m6 | bes | bes2 b:dim7 | \myEndLine
+		c4:m7 f2.:7 | c4:m7 f2.:7 |
+	} \alternative {
+		{
+			bes2 a:7 | f:7 f:5+ | \myEndLineVoltaNotLast
+		}
+		{
+			bes2 ees:6 | bes1 | \myEndLineVoltaLast
+		}
+	}
 	\endPart
 
-	\myMark "B"
-	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
-	\endPart
-
-	\endSong
 	\endChords
+	\endSong
 }
 
 
@@ -155,21 +164,31 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
-	\time 4/4
-	\key c \major
+	\tempo "Andante" 4 = 88
+	\time 2/2
+	\key bes \major
 
-%% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	\partial 2. f4 g f |
 
-%% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+	\repeat volta 2 {
+
+	%% part "A"
+		d' bes r d | c bes r d | d ( bes2.~ | bes4 ) d, ees d |
+		g f r a | g f r a | a ( f2.~ | f4 ) f g f |
+		d' bes r d | c bes r d | d ( bes2.~ | bes4 ) d, ees d |
+		g f r a | g f r g | bes1~ | bes4 bes a aes |
+		g bes2. | ees4 bes2 c4 | d1~ | d4 g, fis f |
+		e g2. | d'4 bes2 d4 | c1~ | c4 f, g f |
+		d'4 bes r d | c bes r d | d ( bes2.~ |
+		bes4 ) d, ees d | g f r a | g f r d' |
+	} \alternative {
+		{
+			d ( bes2. ) | r4 f g f |
+		}
+		{
+			d' ( bes2.~ | bes4 ) r4 r2 |
+		}
+	}
 }
 
  }
@@ -181,28 +200,16 @@
 
 
 \lyricmode {
+	A Cup of Cof -- fee a sand -- wich and you, __ A co -- zy
+	cor -- ner, a ta -- ble for two, __ A chance to
+	whis -- per and cud -- dle and coo __ With lots of
+	hug -- gin' and kiss -- in' in view __ I don't need
+	mus -- ic lob -- ster or wine. __ When -- ev -- er
+	your eyes look in -- to mine __ The things I
+	long for are sim -- ple and few; __
+	A cup of cof -- fee, a sand __ wich and you! A cup of
 
-%% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
-
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
-
-%% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
-
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+	you! __
 }
 
 }
@@ -223,10 +230,10 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "-- help me fill it out this copyright notice --" }
 	}
 	\fill-line {
-		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }
+		\smaller \smaller { "Typeset by Jordan Eldredge <JordanEldredge@gmail.com>" }
 	}
 	\fill-line {
 		\smaller \smaller \concat { "Built at: " #(get-build-info 'build-date)  }

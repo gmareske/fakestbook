@@ -10,6 +10,7 @@
 
 
 
+
 % this sets the default key to middle C if not already defined
 #(define transpose-key (if (defined? 'transpose-key) transpose-key (ly:make-pitch 0 0 0)))
 %#(define transpose-key (ly:pitch-transpose transpose-key (ly:make-pitch -1 0 0)))
@@ -30,28 +31,29 @@
 
 
 
+
 % THIS FILE WAS TRANSLATED FROM THE OPENBOOK PROJECT LOCATED AT https://github.com/veltzer/openbook
 % dump all the metadata into comments on the file because why not
 % METADATA
-% title: All Of Me
+% title: Easy To Love
 % style: Jazz
-% composer: Seymour Simons, Gerald Marks
-% poet: Seymour Simons, Gerald Marks
-% piece: Mod. Swing
-% copyright: 1931 Bourne Co. Copyright Renewed
+% subtitle: From 'Born To Dance'
+% composer: Cole Porter
+% poet: Cole Porter
+% piece: Ballad
+% copyright: 1936 by Chappell & Co., Inc.
+% copyrightextra: Copyright Renewed, Assigned to John F. Wharton, Trustee of the Cole Porter Musical & Literary Property Trusts Chappell & Co., Inc., owner of publication and allied rights throughout the world
 % typesetter: Mark Veltzer <mark.veltzer@gmail.com>
 % completion: 5
-% uuid: 6dd0233c-03b8-11e1-b5a9-0019d11e5a41
-% structure: AB
-% structureremark: the structure of this tune could also be interpreted as ABAC since the 8 first bars of A and B are the same.
-% location: rbk1:16,jfb:39
-% idyoutuberemark1: Louis Armstrong with amazing rythm
-% idyoutube1: wFzxo-XI8As
-% idyoutuberemark2: Ella Firtzerald - amazing
-% idyoutube2: Mx5b4AFVaT8
-% idyoutuberemark3: Oscar - amazing version
-% idyoutube3: aNLvaBCFHdE
-% lyricsurl: http://www.lyrics007.com/Frank%20Sinatra%20Lyrics/All%20Of%20Me%20Lyrics.html
+% uuid: ac74c90e-0d62-11e1-816c-0019d11e5a41
+% structure: ABAC
+% structureremark: Can also think of this tune as AB
+% location: rbk1:130,jfb:107
+% idyoutuberemark1: Ella
+% idyoutube1: uYnqy84ZY9Q
+% idyoutuberemark2: Billie Holiday
+% idyoutube2: izaZR89BJBo
+% lyricsurl: http://www.sing365.com/music/lyric.nsf/Easy-To-Love-lyrics-Ella-Fitzgerald/3040B6936D6C386048256AAB00074FEE
 % /METADATA
 
 % now play with the variables that depend on language
@@ -76,12 +78,12 @@
 	  s4
 	  s^\markup {
 	    \fill-line {
-	      \fontsize #1 \lower #1 \rotate #7 "Mod. Swing"
+	      \fontsize #1 \lower #1 \rotate #7 "Ballad"
 	      \fontsize #8
 	      \override #'(offset . 7)
 	      \override #'(thickness . 6)
-	      \underline \sans "All Of Me"
-	      \fontsize #1 \lower #1  "- Seymour Simons, Gerald Marks"
+	      \underline \sans "Easy To Love"
+	      \fontsize #1 \lower #1  "- Cole Porter"
 	    }
 	  }
 	  s
@@ -98,7 +100,7 @@
   }
   \noPageBreak
 
-  \tocItem \markup "All Of Me / Seymour Simons, Gerald Marks"
+  \tocItem \markup "Easy To Love / Cole Porter"
 
 
 % include the preparatory stuff, if there is any
@@ -125,23 +127,36 @@
 
 	\myMark "A"
 	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	e:7 | a:m | \myEndLine
-	d:7 | d1:m7 | g:7 | \myEndLine
-	\endPart
+	\repeat volta 2 {
+		d1:m7 | g:m7 | d:m7 | g:7 | \myEndLine
+		c:maj7 | f:maj7 | e:m7 |
+	} \alternative {
+		{
+			f:7 | \myEndLine
+			\endPart
 
-	\myMark "B"
-	\startPart
-	c1*2:maj7 | e:7 | \myEndLine
-	a:7 | d:m | \myEndLine
-	f1 | f:m | c2:maj7 e:m7 | a1:7 | \myEndLine
-	d:m7 | g:7 | c2:6 \LPC ees:dim | d:m7 \RPC g:7 | \myEndLine
-	\endPart
+			\myMark "B"
+			\startPart
+			d:m7 | g:7 | c:maj7 | a:m7 | \myEndLine
+			d:m7 | g:7 | e:m7 | a:7 | \myEndLineVolta
+			\endPart
+		}
+		{
+			a:7 | \myEndLine
+			\endPart
+
+			\myMark "C"
+			\startPart
+			d:m7 | f:m6 | c:maj7 | e2:7 ees:dim | \myEndLine
+			d1:m7 | g:7 | c1*2:6 | \myEndLineVolta
+			\endPart
+		}
+	}
 
 	\endSong
 	\endChords
 }
+
 
 
 }
@@ -155,22 +170,32 @@
 
 
 {
-	\tempo "Allegro" 4 = 168
+	\tempo "Moderato" 4 = 108
 	\time 4/4
 	\key c \major
 
 %% part "A"
-	c'4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	e4. ees8 d2~ | d \tuplet 3/2 { e4 gis b } | d2 c~ | c1 |
-	b4. bes8 a2~ | a \tuplet 3/2 { a4 d b } | a1 | b |
+	\repeat volta 2 {
+		a'1 | d,2. e4 | f2 e4. f8 | b2. a4 |
+		g2 fis4 g | d' des c b | a2 gis4. a8 |
+	} \alternative {
+		{
+			g'!1 |
 
-%% part "B"
-	c4 g8 e~ e2~ | e \tuplet 3/2 { c'4 d c } | b gis8 e~ e2~ | e1 |
-	a4. g8 e2~ | e4 dis \tuplet 3/2 { e bes' a } | g2 f~ | f1 |
-	d'2 c4 b | d2. c4 | b2 e,4 g | b2. a4 |
-	c2 a4 c | e2 e | c1~ | c |
+		%% part "B"
+			g | a,2. b4 | e e e2~ | e4 r r2 |
+			r4 g g,4. g8 | aes aes4 aes8 a4 a8 b~ | b4 b b2~ | b4 r r2 |
+		}
+		{
+			a'2. e4 |
+
+		%% part "C"
+			g2. d4 | f2. c4 | e2 b4 c | d des c b |
+			a2 e' | e ees4 d | c1~ \mark \markup { \italic { Fine } } | c4 r r2 |
+		}
+	}
 }
+
 
  }
 }
@@ -183,26 +208,37 @@
 \lyricmode {
 
 %% part "A"
-	All of me __
-	why not take all of me __
-	Can't you see __
-	I'm no good with -- out you __
-
-	Take my lips __
-	I want to lose them __
-	Take my arms __
-	I'll ne -- ver use them __
+	You'd be so Eas -- y To Love,
+	So eas -- y to i -- dol -- ize,
+	All oth -- ers a -- bove
 
 %% part "B"
-	Your good -- bye __
-	left me with eyes that cry __
-	How can I __
-	get a -- long with -- out you __
+	So worth the yearn -- ing for, __
+	So swell to keep ev -- 'ry home -- fire burn -- ing for __
 
-	You took the part
-	that once was my heart
-	So why not
-	take all of me __
+	shame
+
+%% part "C"
+	that you can't see
+	your fu -- ture with me,
+	'cause you'd be oh, so Eas -- y To Love! __
+}
+
+
+}
+\new Lyrics="Lyrics" \lyricsto "Voice" {
+	
+
+
+
+
+
+\lyricmode {
+
+%% part "A"
+	We'd be so grand at the game
+	So care -- free to -- get -- her,
+	that it does seem a
 }
 
 }
@@ -223,7 +259,7 @@
 %% just a little space
 	\null
 	\fill-line {
-		\smaller \smaller { "Copyright © 1931 Bourne Co. Copyright Renewed" }
+		\smaller \smaller { "Copyright © 1936 by Chappell & Co., Inc." }
 	}
 	\fill-line {
 		\smaller \smaller { "Typeset by Mark Veltzer <mark.veltzer@gmail.com>" }

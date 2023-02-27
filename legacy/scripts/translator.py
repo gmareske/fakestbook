@@ -6,6 +6,7 @@ A command line tool to translate old versions of the openbook to the new version
 
 import sys
 import os.path
+import glob
 import mako.exceptions
 import mako.lookup
 import mako.template
@@ -19,13 +20,19 @@ from scripts import attr
 
 
 def main():
+    if len(sys.argv) != 3:
+        for f in glob.glob('src/openbook/*.ly.mako'):
+            translate_one_file(f,
+                               "../songs/" + os.path.splitext(os.path.basename(f))[0])
+
+    else:
+        translate_one_file(sys.argv[1],sys.arv[2])
+
+def translate_one_file(p_input,p_output):
     input_encoding = "utf-8"
     output_encoding = "utf-8"
 
-    p_input = sys.argv[1]
-    p_output = sys.argv[2]
-
-    common = "./testing/translator.ly.mako"
+    common = "/home/griff/Documents/openbook/translator.ly.mako"
 
     # We really need the unlink, even though we have *open a file
     # for writing* later on which is supposed to truncate the file to 0
