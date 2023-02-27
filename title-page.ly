@@ -16,10 +16,10 @@
       \null
       \null
       \null
-      \fill-line { \fontsize #11 \bold #(string-concatenate (list "The Openbook (" transpose-name ")")) }
+      \fill-line { \fontsize #11 \bold #(string-concatenate (list "The Fakestbook (" transpose-name ")")) }
       \null
       \null
-      \fill-line { \larger \larger \bold #(string-concatenate (list "An open source Jazz real book in the key of " transpose-name))
+      \fill-line { \larger \larger \bold #(string-concatenate (list "An open source Jazz song book in the key of " transpose-name))
 		    }
       \null
       \null
@@ -27,21 +27,21 @@
       \fill-line {
 	\huge \bold \concat {
 	  "Website: "
-	  \with-url #"https://veltzer.github.io/openbook" https://veltzer.github.io/openbook
+	  \with-url #"https://gmareske.github.io/fakestbook" https://gmareske.github.io/fakestbook
 	}
       }
       \null
       \fill-line {
 	\huge \bold \concat {
 	  "Development: "
-	  \with-url #"https://github.com/veltzer/openbook" https://github.com/veltzer/openbook
+	  \with-url #"https://github.com/gmareske/fakestbook" https://github.com/gmareske/fakestbook
 	}
       }
       \null
       \fill-line {
 	\huge \bold \concat {
-	  "Lead developer: Mark Veltzer "
-	  "<" \with-url #"mailto:mark.veltzer@gmail.com" mark.veltzer@gmail.com ">"
+	  "Project Maintainer: Griffin Mareske "
+	  "<" \with-url #"mailto:gmareske@gmail.com" gmareske@gmail.com ">"
 	}
       }
       \null
@@ -49,12 +49,12 @@
 	\huge \bold \concat {
 	  "Typesetting copyright: © 2011-"
 	  2023
-	  " Mark Veltzer "
-	  "<" \with-url #"mailto:mark.veltzer@gmail.com" mark.veltzer@gmail.com ">"
+	  " their respective copyright holders."
+
 	}
       }
       \null
-      \fill-line { \huge \bold "Tune copyright: © belong to their respective holders" }
+      \fill-line { \huge \bold "Tune copyright: © belong to their respective holders." }
       \null
       \null
       \null
@@ -87,6 +87,12 @@
     \layout {
       #(layout-set-staff-size 35)
       indent = 2.6\cm
+      \context {
+	\Score
+	\override ChordName.style = #'jazz
+	\override ChordName.font-name = #"LilyJAZZtext"
+      }
+
     }
   }
 }
