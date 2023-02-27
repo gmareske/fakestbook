@@ -14,8 +14,9 @@
 	 (char=? #\~ (string-ref filename (- (string-length filename) 1))))))
   ;; list of lilypond source files
   (define ly-source-files
-   (map (lambda (fn) (string-concatenate (list songs-source-directory "/" fn)))
-    (scandir (string-append  "../" songs-source-directory) include-this-file?)))
+   (sort
+    (map (lambda (fn) (string-concatenate (list songs-source-directory "/" fn)))
+     (scandir (string-append  "../" songs-source-directory) include-this-file?)) string<? ))
   (display "Building openbook out of source files: ")
   (display ly-source-files)
   (newline)
