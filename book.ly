@@ -4,7 +4,7 @@
   
   (newline) ; for clean output
   (use-modules (ice-9 ftw))
-
+  
   ;; which directory should we look for source files in?
   (define songs-source-directory "songs")
   ;; rules to exclude a given filename
@@ -15,14 +15,15 @@
   ;; list of lilypond source files
   (define ly-source-files
    (map (lambda (fn) (string-concatenate (list songs-source-directory "/" fn)))
-    (scandir (string-append  "/home/griff/Documents/openbook/testing/" songs-source-directory) include-this-file?)))
+    (scandir (string-append  "../" songs-source-directory) include-this-file?)))
   (display "Building openbook out of source files: ")
   (display ly-source-files)
   (newline)
 )
 
-% Tranposition
-\include "transpose.ly"
+%% Import the config options
+\include "config.ly"
+
 %% Build information
 \include "build-info.ly"		    
 

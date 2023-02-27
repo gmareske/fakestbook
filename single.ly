@@ -11,8 +11,8 @@
   (newline)
 )
 
-% Figure out what key we're in
-\include "transpose.ly"
+%% Import the config
+\include "config.ly"
 % Get the build information
 \include "build-info.ly"
 
