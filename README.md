@@ -2,8 +2,15 @@
 
 Fakestbook is a Jazz fakebook/song book compiled by free and open source software. 
 
-Check out the [project website!](TODO).
-Want to download the book? Click [here](TODO).
+
+
+#### Quicklinks
+[TODO Project website!](TODO).
+
+Want to download the book? This version might be slightly out of date.
+- [C Version](output/c-book.pdf)
+- [Eb Version](output/eb-book.pdf)
+- [Bb Version](output/bb-book.pdf)
 
 ## Background
 
@@ -68,4 +75,4 @@ Maintainers:
 ## License
 
 This repository is licensed under the GPLv3 license.
-See `LICENSE` for more details.
+See [LICENSE](LICENSE) for more details.
