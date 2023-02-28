@@ -45,5 +45,7 @@
 
   (hashq-set! fb:build-info 'lily-version
    (get-first-line-of "lilypond --version"))
+  (hashq-set! fb:build-info 'website
+   "https://github.com/gmareske/openbook")
 
 )
