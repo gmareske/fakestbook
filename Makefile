@@ -4,7 +4,7 @@ BOOK_TOPLEVEL:=book
 SINGLE_TOPLEVEL:=single
 
 # compiles a single song into a subdirectory of the output directory
-$(OUTPUT_DIR)/$(SONG_DIR)/%.pdf:
+$(OUTPUT_DIR)/$(SONG_DIR)/%.pdf: $(SONG_DIR)/%.ly
 	lilypond -lERROR -o $(basename $@) --evaluate='(define-public fb:single-file "$(SONG_DIR)/$(basename $(notdir $@)).ly")' $(SINGLE_TOPLEVEL).ly
 
 # compile the whole book from the topleve

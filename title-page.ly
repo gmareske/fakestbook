@@ -58,6 +58,7 @@
       \null
       \null
       \null
+      \fill-line { \small \concat { "Build version: " #build-version } }
       \fill-line { \small \concat { "Git tag: " #(get-build-info 'git-tag) } }
       \fill-line { \small \concat { "Git describe: " #(get-build-info 'git-desc) } }
       \fill-line { \small \concat { "Git commits: " #(get-build-info 'git-commits) } }

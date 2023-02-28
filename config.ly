@@ -3,6 +3,12 @@
 % CHANGE THIS VALUE TO GET A DIFFERENT TRANSPOSITION OF THE BOOK
 #(define transpose-version 'c)
 
+#(define build-version "v0.1.0")
+
+
+
+%% DONT EDIT ANYTHING AFTER THIS LINE, THIS IS COMMON UTILITY FUNCTIONS
+
 %% reverse transposition
 %% TODO: do this in a non-hardcoded way?
 #(define key-transposition-alist '((c . c)
